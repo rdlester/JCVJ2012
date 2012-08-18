@@ -1,0 +1,14 @@
+.metadata/
+
+# Java class files
+*.class
+
+#DStore
+.DS_Store
+
+#generated files
+VanJam2012/bin/
+VanJam2012/VanJam2012/generated
+
+# Local configuration file
+VanJam2012/local.properties
