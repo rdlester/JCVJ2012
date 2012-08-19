@@ -11,3 +11,4 @@ abstract class Level extends World {
   void setup() {
   }
 }
+

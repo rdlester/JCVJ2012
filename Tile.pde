@@ -76,7 +76,7 @@ static class Animations {
   static Animation CHAD_LEFT_Fire = new Animation("data/images/L-", 3, 4, ".png", 150);
   static final int iCHAD_LEFT_Fire = 26;
   static Animation EMYGUN_LEFT_Fire = new Animation("data/images/L-", 6, 7, ".png", 150);
-  static final int iALEX_LEFT_Fire = 27;
+  static final int iEMYGUN_LEFT_Fire = 27;
   
   static Animation ALEX_LEFT_Idle = new Animation("data/images/L-", 0, 0, ".png", 150);
   static final int iALEX_LEFT_Idle = 28;
@@ -239,17 +239,3 @@ abstract class Tile {
 
   abstract void draw();
 }
-
-<<<<<<< HEAD
-=======
-
-
-<<<<<<< HEAD
->>>>>>> db58a4b5f9878ae35a35db114657cc09f64c9e20
-=======
-
-
-
-
-
->>>>>>> Key handling fixed, panic mode

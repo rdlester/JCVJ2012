@@ -47,13 +47,3 @@ class VictoryTile extends Tile {
     
   }
 }
-
-
-
-
-
-
-
-
-
-

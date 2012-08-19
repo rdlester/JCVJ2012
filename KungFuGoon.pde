@@ -126,3 +126,4 @@ class KungFuGoon extends Character {
     super.drawAnimation();
   }
 }
+

@@ -104,3 +104,4 @@ class FlyingKickCard extends Card {
     c.actionFlyingKick();
   }
 }
+

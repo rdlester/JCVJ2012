@@ -15,16 +15,3 @@ class Chad extends VanDammes {
     super.drawAnimation();
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

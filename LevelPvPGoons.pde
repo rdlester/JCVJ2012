@@ -74,3 +74,4 @@ class LevelPvPGoons extends Level {
     super.draw();
   }
 }
+

@@ -80,3 +80,4 @@ abstract class Board extends Being {
     //image(_background, 0, 0);
   }
 }
+

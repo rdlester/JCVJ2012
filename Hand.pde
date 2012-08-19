@@ -34,3 +34,4 @@ abstract class Hand extends Being {
     _ready = ready;
   }
 }
+

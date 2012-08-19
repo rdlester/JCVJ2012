@@ -450,3 +450,4 @@ class VanDamHand extends Hand {
     _chadHand[5] = new StrafeRightCard(Player.CHAD);
   }
 }
+

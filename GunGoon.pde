@@ -14,3 +14,4 @@ class GunGoon extends FiringCharacter {
     super.drawAnimation();
   }
 }
+

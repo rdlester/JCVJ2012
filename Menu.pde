@@ -11,3 +11,4 @@ class Menu extends World {
     //IMPORTANT: put all other setup hereterBeing(TemplateBeing);
   }
 }
+
