@@ -22,10 +22,6 @@ import static hermes.postoffice.POConstants.*;
 static final int WINDOW_WIDTH = 800;
 static final int WINDOW_HEIGHT = 800;
 
-
-
-
-
 World currentWorld;
 
 ///////////////////////////////////////////////////
