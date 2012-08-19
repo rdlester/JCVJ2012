@@ -78,7 +78,7 @@ abstract class Character extends Tile {
                   else{
                   }
                   break;
-                case default:
+                default:
                   //"Stuck" animation goes here.
                   break;                
               }
@@ -103,7 +103,7 @@ abstract class Character extends Tile {
                   else{
                   }
                   break;
-                case default:
+                default:
                   //"Stuck" animation goes here.
                   break;                
               }
@@ -128,7 +128,7 @@ abstract class Character extends Tile {
                   else{
                   }
                   break;
-                case default:
+                default:
                   //"Stuck" animation goes here.
                   break;                
               }
@@ -159,7 +159,7 @@ abstract class Character extends Tile {
                   else{
                   }
                   break;
-                case default:
+                default:
                   //"Stuck" animation goes here.
                   break;                
               }
@@ -184,7 +184,7 @@ abstract class Character extends Tile {
                   else{
                   }
                   break;
-                case default:
+                default:
                   //"Stuck" animation goes here.
                   break;                
               }
@@ -209,7 +209,7 @@ abstract class Character extends Tile {
                   else{
                   }
                   break;
-                case default:
+                default:
                   //"Stuck" animation goes here.
                   break;                
               }
@@ -234,7 +234,7 @@ abstract class Character extends Tile {
                   else{
                   }
                   break;
-                case default:
+                default:
                   //"Stuck" animation goes here.
                   break;                
               }
@@ -258,7 +258,7 @@ abstract class Character extends Tile {
           _orientation = Orientation.S;
           break;
         default:
-          print("Error: Not a valid orientation.")
+          print("Error: Not a valid orientation.");
           break;
       }
     }
@@ -280,7 +280,7 @@ abstract class Character extends Tile {
           _orientation = Orientation.N;
           break;
         default:
-          print("Error: Not a valid orientation.")
+          print("Error: Not a valid orientation.");
           break;
       }
     }
@@ -302,7 +302,7 @@ abstract class Character extends Tile {
           _orientation = Orientation.E;
           break;
         default:
-          print("Error: Not a valid orientation.")
+          print("Error: Not a valid orientation.");
           break;
       }
     }

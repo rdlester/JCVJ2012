@@ -5,11 +5,12 @@ static class GoonsConsts {
 }
 
 class GoonsBoard extends Board {
-  ArrayList<Character> _goons; // Only Goons
+  Character[] _goons; // Only Goons
   Character _currentGoon;
 
   GoonsBoard() {
     super();
+    _goons = new Character[GoonsConsts.NUM];
     _currentGoon = null;
   }
 
@@ -27,22 +28,29 @@ class GoonsBoard extends Board {
     }
   }
 
+  void getGoon(int i) {
+  }
+
   void playCard(int player) {
     super.playCard(player);
     if (player == Player.GOON) {
       if (_currentGoon.getType() == TileType.GUN_GOON) {
         _playedCard.execute((GunGoon)_currentGoon);
-      } else if (_currentGoon.getType() == TileType.KUNG_FU_GOON) {
+      } 
+      else if (_currentGoon.getType() == TileType.KUNG_FU_GOON) {
         _playedCard.execute((KungFuGoon)_currentGoon);
       }
     }
   }
 
   Character pickGoon() {
-    int picked = floor(random(GoonsConsts.NUM));
-    _currentGoon = _goons.get(picked);
+
+    _currentGoon = null;
+    while (_currentGoon == null) {
+      int picked = floor(random(GoonsConsts.NUM));
+      _currentGoon = _goons[picked];
+    }
     return _currentGoon;
   }
 }
-
 
