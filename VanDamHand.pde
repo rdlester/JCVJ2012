@@ -1,6 +1,7 @@
 static class VanDamConsts {
   static final int ALEX_HAND_SIZE = 6;
   static final int CHAD_HAND_SIZE = 6;
+  static final int QUEUE_SIZE = 6;
 
   static final int ALEX_X = 22;
   static final int ALEX_Y = 102;
@@ -91,6 +92,8 @@ class VanDamHand extends Hand {
   Card[] _alexHand;
   Card[] _chadHand;
   
+  ArrayList<Card> _queue;
+  
   PImage alexName = loadImage(VanDamConsts.ALEX_NAME);
   PImage chadName = loadImage(VanDamConsts.CHAD_NAME);
 
@@ -98,117 +101,141 @@ class VanDamHand extends Hand {
     super();
     initAlexHand();
     initChadHand();
+    _queue = new ArrayList<Card>(VanDamConsts.QUEUE_SIZE);
   }
-
-  void update() {
-    super.update();
+  
+  ArrayList<Card> getQueue() {
+    assert _queue != null: "VanDamHand: Gotta pick 6 cards before you can execute them";
+    ArrayList<Card> temp = _queue;
+    _queue = null;
+    return _queue;
   }
 
   void draw() {
-    // Translate to Alex's Hand
-    pushMatrix();
-    translate(VanDamConsts.ALEX_X, VanDamConsts.ALEX_Y);
-    // Draw Title
-    pushMatrix();
-    translate(VanDamConsts.ALEX_NAME_X, VanDamConsts.ALEX_NAME_Y);
-    image(alexName, 0, 0);
-    popMatrix();
+    if(getTurn()) {
+      // Translate to Alex's Hand
+      pushMatrix();
+      translate(VanDamConsts.ALEX_X, VanDamConsts.ALEX_Y);
+      // Draw Title
+      pushMatrix();
+      translate(VanDamConsts.ALEX_NAME_X, VanDamConsts.ALEX_NAME_Y);
+      image(alexName, 0, 0);
+      popMatrix();
 
-    // Draw cards
-    pushMatrix();
-    translate(VanDamConsts.ALEX_CARD1_X, VanDamConsts.ALEX_CARD1_Y);
-    _alexHand[0].draw();
-    popMatrix();
-    pushMatrix();
-    translate(VanDamConsts.ALEX_CARD2_X, VanDamConsts.ALEX_CARD2_Y);
-    _alexHand[1].draw();
-    popMatrix();
-    pushMatrix();
-    translate(VanDamConsts.ALEX_CARD3_X, VanDamConsts.ALEX_CARD3_Y);
-    _alexHand[2].draw();
-    popMatrix();
-    pushMatrix();
-    translate(VanDamConsts.ALEX_CARD4_X, VanDamConsts.ALEX_CARD4_Y);
-    _alexHand[3].draw();
-    popMatrix();
-    pushMatrix();
-    translate(VanDamConsts.ALEX_CARD5_X, VanDamConsts.ALEX_CARD5_Y);
-    _alexHand[4].draw();
-    popMatrix();
-    pushMatrix();
-    translate(VanDamConsts.ALEX_CARD6_X, VanDamConsts.ALEX_CARD6_Y);
-    _alexHand[5].draw();
-    popMatrix();
+      // Draw cards
+      pushMatrix();
+      translate(VanDamConsts.ALEX_CARD1_X, VanDamConsts.ALEX_CARD1_Y);
+      _alexHand[0].draw();
+      popMatrix();
+      pushMatrix();
+      translate(VanDamConsts.ALEX_CARD2_X, VanDamConsts.ALEX_CARD2_Y);
+      _alexHand[1].draw();
+      popMatrix();
+      pushMatrix();
+      translate(VanDamConsts.ALEX_CARD3_X, VanDamConsts.ALEX_CARD3_Y);
+      _alexHand[2].draw();
+      popMatrix();
+      pushMatrix();
+      translate(VanDamConsts.ALEX_CARD4_X, VanDamConsts.ALEX_CARD4_Y);
+      _alexHand[3].draw();
+      popMatrix();
+      pushMatrix();
+      translate(VanDamConsts.ALEX_CARD5_X, VanDamConsts.ALEX_CARD5_Y);
+      _alexHand[4].draw();
+      popMatrix();
+      pushMatrix();
+      translate(VanDamConsts.ALEX_CARD6_X, VanDamConsts.ALEX_CARD6_Y);
+      _alexHand[5].draw();
+      popMatrix();
 
-    popMatrix();
+      popMatrix();
 
-    // Translate to Chad's Hand
-    pushMatrix();
-    translate(VanDamConsts.CHAD_X, VanDamConsts.CHAD_Y);
+      // Translate to Chad's Hand
+      pushMatrix();
+      translate(VanDamConsts.CHAD_X, VanDamConsts.CHAD_Y);
 
-    // Draw Title
-    pushMatrix();
-    translate(VanDamConsts.CHAD_NAME_X, VanDamConsts.CHAD_NAME_Y);
-    image(chadName, 0, 0);
-    popMatrix();
+      // Draw Title
+      pushMatrix();
+      translate(VanDamConsts.CHAD_NAME_X, VanDamConsts.CHAD_NAME_Y);
+      image(chadName, 0, 0);
+      popMatrix();
 
-    // Draw cards
-    pushMatrix();
-    translate(VanDamConsts.CHAD_CARD1_X, VanDamConsts.CHAD_CARD1_Y);
-    _chadHand[0].draw();
-    popMatrix();
-    pushMatrix();
-    translate(VanDamConsts.CHAD_CARD2_X, VanDamConsts.CHAD_CARD2_Y);
-    _chadHand[1].draw();
-    popMatrix();
-    pushMatrix();
-    translate(VanDamConsts.CHAD_CARD3_X, VanDamConsts.CHAD_CARD3_Y);
-    _chadHand[2].draw();
-    popMatrix();
-    pushMatrix();
-    translate(VanDamConsts.CHAD_CARD4_X, VanDamConsts.CHAD_CARD4_Y);
-    _chadHand[3].draw();
-    popMatrix();
-    pushMatrix();
-    translate(VanDamConsts.CHAD_CARD5_X, VanDamConsts.CHAD_CARD5_Y);
-    _chadHand[4].draw();
-    popMatrix();
-    pushMatrix();
-    translate(VanDamConsts.CHAD_CARD6_X, VanDamConsts.CHAD_CARD6_Y);
-    _chadHand[5].draw();
-    popMatrix();
+      // Draw cards
+      pushMatrix();
+      translate(VanDamConsts.CHAD_CARD1_X, VanDamConsts.CHAD_CARD1_Y);
+      _chadHand[0].draw();
+      popMatrix();
+      pushMatrix();
+      translate(VanDamConsts.CHAD_CARD2_X, VanDamConsts.CHAD_CARD2_Y);
+      _chadHand[1].draw();
+      popMatrix();
+      pushMatrix();
+      translate(VanDamConsts.CHAD_CARD3_X, VanDamConsts.CHAD_CARD3_Y);
+      _chadHand[2].draw();
+      popMatrix();
+      pushMatrix();
+      translate(VanDamConsts.CHAD_CARD4_X, VanDamConsts.CHAD_CARD4_Y);
+      _chadHand[3].draw();
+      popMatrix();
+      pushMatrix();
+      translate(VanDamConsts.CHAD_CARD5_X, VanDamConsts.CHAD_CARD5_Y);
+      _chadHand[4].draw();
+      popMatrix();
+      pushMatrix();
+      translate(VanDamConsts.CHAD_CARD6_X, VanDamConsts.CHAD_CARD6_Y);
+      _chadHand[5].draw();
+      popMatrix();
 
-    popMatrix();
+      popMatrix();
+    }
   }
 
   void handleKeyMessage(KeyMessage m) {
     int key = m.getKeyCode();
-    
-    // Play card in Alex's hand
-    if (key == Q) {
+    if(key == DELETE) {
+      _queue.clear();
+    } else if(key == ENTER && _queue.size() == VanDamConsts.QUEUE_SIZE) {
+      setReady(true);
     }
-    else if (key == W) {
-    } 
-    else if (key == A) {
-    }
-    else if (key == S) {
-    }  
-    else if (key == Z) {
-    }
-    else if (key == X) {
-    }
-    // Play card in Chad's hand
-    else if (key == E) {
-    } 
-    else if (key == R) {
-    }  
-    else if (key == D) {
-    } 
-    else if (key == F) {
-    }   
-    else if (key == C) {
-    } 
-    else if (key == V) {
+    else if(_queue.size() < VanDamConsts.QUEUE_SIZE) {
+      // Play card in Alex's hand
+      if (key == Q) {
+          _queue.add(_alexHand[0]);
+      }
+      else if (key == W) {
+          _queue.add(_alexHand[1]);
+      } 
+      else if (key == A) {
+          _queue.add(_alexHand[2]);
+      }
+      else if (key == S) {
+          _queue.add(_alexHand[3]);
+      }  
+      else if (key == Z) {
+          _queue.add(_alexHand[4]);
+      }
+      else if (key == X) {
+          _queue.add(_alexHand[5]);
+      }
+      // Play card in Chad's hand
+      else if (key == E) {
+          _queue.add(_chadHand[0]);
+      } 
+      else if (key == R) {
+          _queue.add(_chadHand[1]);
+      }
+      else if (key == D) {
+          _queue.add(_chadHand[2]);
+      } 
+      else if (key == F) {
+          _queue.add(_chadHand[3]);
+      }   
+      else if (key == C) {
+          _queue.add(_chadHand[4]);
+      } 
+      else if (key == V) {
+          _queue.add(_chadHand[5]);
+      }
     }
   }
 

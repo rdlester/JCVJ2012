@@ -55,18 +55,8 @@ abstract class Board extends Being {
     return _chad;
   }
 
-  public void nextCard(Card c) {
-    _playedCard = c;
-  }
-
-  // Subclass updates should handle other players
-  public void update() {
-    if (_playedCard != null) {
-      playCard(_playedCard.getPlayer());
-    }
-  }
-
-  public void playCard(int player) {
+  public void playCard(Card c) {
+    int player = c.getPlayer();
     if (player == Player.ALEX) {
       _playedCard.execute(getAlex());
       _playedCard = null;

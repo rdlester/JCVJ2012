@@ -9,18 +9,31 @@ static class TurnState {
  * States are: Van Dam's turn, Evil turn, and Execution stage
  */
 class TurnController extends HObject {
-  Board _board;
-  VanDamHand _vamDamHand;
-  ArrayList<Hand> _evilHands;
+  ArrayList<Card> _queue;
+  Card _evilMove;
   int _state;
 
-  TurnController(Board board, VanDamHand vanDamHand) {
-    _board = board;
-    _vamDamHand = vanDamHand;
+  TurnController() {
+    _queue = null;
     _state = TurnState.PLANNING;
   }
 
-  void nextTurn() {
+  int getState() {
+    return _state;
+  }
+  
+  void setQueueForExec(ArrayList<Card> queue) {
+    _state = TurnState.COMBAT_VD;
+    _queue = queue;
+  }
+  
+  Card getNextVDMove() {
+    assert _queue.size() > 0: "TurnController: no more VD moves to play! go back to planning"
+    return _queue.remove(0);
+  }
+  
+  void setQueueForExec(Card queue) {
+    
   }
 }
 
