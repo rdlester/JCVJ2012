@@ -14,6 +14,7 @@ static class TileType {
  */
 abstract class Tile {
   int _type;
+  int _hp;
 
   Tile(int type) {
     _type = type;
@@ -21,6 +22,10 @@ abstract class Tile {
   
   int getType() {
     return _type;
+  }
+  
+  void applyHit(int power) {
+    _hp-=power;
   }
 
   abstract void draw();
