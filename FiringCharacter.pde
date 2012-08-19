@@ -1,6 +1,6 @@
 class FiringCharacter extends Character {
-  FiringCharacter(int type) {
-    super(type);
+  FiringCharacter(int type, Board board) {
+    super(type, board);
   }
 
   void actionFire()

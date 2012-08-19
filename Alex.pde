@@ -3,8 +3,8 @@
  * Behaves less randomly
  */
 class Alex extends FiringCharacter {
-  Alex() {
-    super(TileType.ALEX);
+  Alex(Board board) {
+    super(TileType.ALEX, board);
   }
 
   void moveForward2()

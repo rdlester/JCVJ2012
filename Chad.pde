@@ -3,8 +3,8 @@
  * Very random, uncontrolled, but has special moves
  */
 class Chad extends FiringCharacter {
-  Chad() {
-    super(TileType.CHAD);
+  Chad(Board board) {
+    super(TileType.CHAD, board);
   }
 
   void moveForward2()
