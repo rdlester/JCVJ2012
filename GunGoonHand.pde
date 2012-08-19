@@ -83,6 +83,36 @@ class GunGoonHand extends GoonHand {
       translate(GoonConsts.CARD7_X, GoonConsts.CARD7_Y);
       _gunHand[6].draw();
       popMatrix();
+      
+      if (key == POConstants.Q && !getReady) {
+            _queue.add(_goonHand[0]);
+            setReady = true;
+        }
+        else if (key == POConstants.W && !getReady) {
+            _queue.add(_goonHand[1]);
+            setReady = true;
+        } 
+        else if (key == POConstants.E && !getReady) {
+            _queue.add(_goonHand[2]);
+            setReady = true;
+        }
+        else if (key == POConstants.R && !getReady) {
+            _queue.add(_goonHand[3]);
+            setReady = true;
+        }  
+        else if (key == POConstants.A && !getReady) {
+            _queue.add(_goonHand[4]);
+            setReady = true;
+        }
+        else if (key == POConstants.S && !getReady) {
+            _queue.add(_goonHand[5]);
+            setReady = true;
+        }
+        else if (key == POConstants.D && !getReady) {
+            _queue.add(_goonHand[6]);
+            setReady = true;
+        }
+        
     }
   }
 }
