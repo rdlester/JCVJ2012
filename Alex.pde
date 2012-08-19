@@ -2,7 +2,7 @@
  * Alex - player controlled character
  * Behaves less randomly
  */
-class Alex extends Character {
+class Alex extends FiringCharacter {
   Alex() {
     
   }
