@@ -49,11 +49,11 @@ abstract class Character extends Tile {
                     board.set (_x,_y,this);
                     _y-=1;
                     board.set (_x,_y,next);
-                  }
-                  else{
+                  } else{
+                    
                   }
                   break;
-                case default:
+                default:
                   //"Stuck" animation goes here.
                   break;                
               }

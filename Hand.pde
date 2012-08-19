@@ -12,9 +12,11 @@ static class HandConsts {
  * Hand of Cards
  */
 class Hand extends Being {
+  ArrayList<Card> _cards;
+  
   Hand(Rectangle shape) {
-    super(shape);
-    //Add your constructor info here
+    super(new Rectangle(HandConsts.HAND_X, HandConsts.HAND_Y, HandConsts.HAND_W, HandConsts.HAND_H);
+    _cards = new ArrayList<Card>();
   }
 
   public void update() {

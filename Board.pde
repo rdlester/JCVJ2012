@@ -28,6 +28,7 @@ abstract class Board extends Being {
     super(new Rectangle(BoardConsts.BOARD_X, BoardConsts.BOARD_Y, BoardConsts.BOARD_W, BoardConsts.BOARD_H));
     _alex = new Alex(this);
     _chad = new Chad(this);
+    _grid = new Tile[BoardConsts.GRID_W][BoardConsts.GRID_H];
     initBoard();
     _playedCard = null;
   }
