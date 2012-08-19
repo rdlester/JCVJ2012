@@ -36,8 +36,16 @@ class GoonsBoard extends Board {
       }
     }
   }
-
-  void getGoon(int i) {
+  
+  boolean getReady() {
+    for(int i = 1; i <= BoardConsts.GRID_W; i++) {
+      for(int j = 1; j <= BoardConsts.GRID_H; j++) {
+        if(_grid[i][j].isAnim()) {
+          return false;
+        }
+      }
+    }
+    return true;
   }
 
   void playCard(Card c) {
@@ -53,14 +61,13 @@ class GoonsBoard extends Board {
     }
   }
 
-  Character pickGoon() {
-
+  int pickGoon() {
     _currentGoon = null;
     while (_currentGoon == null) {
       int picked = floor(random(GoonsConsts.NUM));
       _currentGoon = _goons[picked];
     }
-    return _currentGoon;
+    return _currentGoon.getType();
   }
   
   void update() {

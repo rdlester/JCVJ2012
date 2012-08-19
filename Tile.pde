@@ -128,6 +128,10 @@ abstract class Tile {
     
   }
 
+  boolean isAnim() {
+    return _animate;
+  }
+
   int getType() {
     return _type;
   }
