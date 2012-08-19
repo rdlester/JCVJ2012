@@ -11,7 +11,7 @@ abstract class FiringCharacter extends Character {
       
       case Orientation.N:
         _y-=1;
-        for (int distance = _board.GRID_H - _y; distance > 0; distance--){
+        for (int distance = BoardConsts.GRID_H - _y; distance > 0; distance--){
           current = _board.get(_x,_y);
           switch (current.getType()){
             
@@ -25,7 +25,7 @@ abstract class FiringCharacter extends Character {
             case TileType.CHAD:
             case TileType.GUN_GOON:
             case TileType.KUNG_FU_GOON:
-              next.applyHit(1);
+              current.applyHit(1);
               stopIt = true;
               break;
           }
@@ -39,7 +39,7 @@ abstract class FiringCharacter extends Character {
         }
       case Orientation.E:
         _x+=1;
-        for (int distance = _board.GRID_W - _x; distance > 0; distance--){
+        for (int distance = BoardConsts.GRID_W - _x; distance > 0; distance--){
           current = _board.get(_x,_y);
           switch (current.getType()){
             
@@ -53,7 +53,7 @@ abstract class FiringCharacter extends Character {
             case TileType.CHAD:
             case TileType.GUN_GOON:
             case TileType.KUNG_FU_GOON:
-              next.applyHit(1);
+              current.applyHit(1);
               stopIt = true;
               break;
           }
@@ -67,7 +67,7 @@ abstract class FiringCharacter extends Character {
         }
       case Orientation.S:
         _y+=1;
-        for (int distance = _board.GRID_H - _y; distance > 0; distance--){
+        for (int distance = BoardConsts.GRID_H - _y; distance > 0; distance--){
           current = _board.get(_x,_y);
           switch (current.getType()){
             
@@ -81,7 +81,7 @@ abstract class FiringCharacter extends Character {
             case TileType.CHAD:
             case TileType.GUN_GOON:
             case TileType.KUNG_FU_GOON:
-              next.applyHit(1);
+              current.applyHit(1);
               stopIt = true;
               break;
           }
@@ -95,7 +95,7 @@ abstract class FiringCharacter extends Character {
         }
       case Orientation.W:
         _x-=1;
-        for (int distance = _board.GRID_W - _x; distance > 0; distance--){
+        for (int distance = BoardConsts.GRID_W - _x; distance > 0; distance--){
           current = _board.get(_x,_y);
           switch (current.getType()){
             
@@ -109,7 +109,7 @@ abstract class FiringCharacter extends Character {
             case TileType.CHAD:
             case TileType.GUN_GOON:
             case TileType.KUNG_FU_GOON:
-              next.applyHit(1);
+              current.applyHit(1);
               stopIt = true;
               break;
           }

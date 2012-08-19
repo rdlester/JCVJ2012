@@ -139,11 +139,11 @@ abstract class VanDammes extends FiringCharacter {
       case TileType.BLANK:
         break;
       case TileType.BARREL:
-        if (last.getType() = TileType.BLANK)
+        if (last.getType() == TileType.BLANK)
         {
-          y-=1;
+          _y-=1;
           _board.set(_x,_y,last);
-          y-=1;
+          _y-=1;
           _board.set(_x,_y,next);
         }
         else{
@@ -173,13 +173,13 @@ abstract class VanDammes extends FiringCharacter {
       case TileType.BLANK:
         break;
       case TileType.BARREL:
-        if (last.getType() = TileType.BLANK)
+        if (last.getType() == TileType.BLANK)
         {
-          y-=1;
-          x+=1;
+          _y-=1;
+          _x+=1;
           _board.set(_x,_y,last);
-          y-=1;
-          x+=1;
+          _y-=1;
+          _x+=1;
           _board.set(_x,_y,next);
         }
         else{
@@ -209,11 +209,11 @@ abstract class VanDammes extends FiringCharacter {
       case TileType.BLANK:
         break;
       case TileType.BARREL:
-        if (last.getType() = TileType.BLANK)
+        if (last.getType() == TileType.BLANK)
         {
-          x+=1;
+          _x+=1;
           _board.set(_x,_y,last);
-          x+=1;
+          _x+=1;
           _board.set(_x,_y,next);
         }
         else{
@@ -243,13 +243,13 @@ abstract class VanDammes extends FiringCharacter {
       case TileType.BLANK:
         break;
       case TileType.BARREL:
-        if (last.getType() = TileType.BLANK)
+        if (last.getType() == TileType.BLANK)
         {
-          y+=1;
-          x+=1;
+          _y+=1;
+          _x+=1;
           _board.set(_x,_y,last);
-          y+=1;
-          x+=1;
+          _y+=1;
+          _x+=1;
           _board.set(_x,_y,next);
         }
         else{
@@ -279,11 +279,11 @@ abstract class VanDammes extends FiringCharacter {
       case TileType.BLANK:
         break;
       case TileType.BARREL:
-        if (last.getType() = TileType.BLANK)
+        if (last.getType() == TileType.BLANK)
         {
-          y+=1;
+          _y+=1;
           _board.set(_x,_y,last);
-          y+=1;
+          _y+=1;
           _board.set(_x,_y,next);
         }
         else{
@@ -313,13 +313,13 @@ abstract class VanDammes extends FiringCharacter {
       case TileType.BLANK:
         break;
       case TileType.BARREL:
-        if (last.getType() = TileType.BLANK)
+        if (last.getType() == TileType.BLANK)
         {
-          y+=1;
-          x-=1;
+          _y+=1;
+          _x-=1;
           _board.set(_x,_y,last);
-          y+=1;
-          x-=1;
+          _y+=1;
+          _x-=1;
           _board.set(_x,_y,next);
         }
         else{
@@ -349,11 +349,11 @@ abstract class VanDammes extends FiringCharacter {
       case TileType.BLANK:
         break;
       case TileType.BARREL:
-        if (last.getType() = TileType.BLANK)
+        if (last.getType() == TileType.BLANK)
         {
-          x-=1;
+          _x-=1;
           _board.set(_x,_y,last);
-          x-=1;
+          _x-=1;
           _board.set(_x,_y,next);
         }
         else{
@@ -383,13 +383,13 @@ abstract class VanDammes extends FiringCharacter {
       case TileType.BLANK:
         break;
       case TileType.BARREL:
-        if (last.getType() = TileType.BLANK)
+        if (last.getType() == TileType.BLANK)
         {
-          y-=1;
-          x-=1;
+          _y-=1;
+          _x-=1;
           _board.set(_x,_y,last);
-          y-=1;
-          x-=1;
+          _y-=1;
+          _x-=1;
           _board.set(_x,_y,next);
         }
         else{

@@ -10,11 +10,11 @@ class GoonsBoard extends Board {
 
   GoonsBoard() {
     super();
-    _goons = new Character[GoonsConsts.NUM];
     _currentGoon = null;
   }
 
   void initBoard() {
+    _goons = new Character[GoonsConsts.NUM];
     for (int i = 0; i < GoonsConsts.KUNG_FU_NUM; i++) {
       _goons[i] = new KungFuGoon(this);
     }
@@ -51,6 +51,14 @@ class GoonsBoard extends Board {
       _currentGoon = _goons[picked];
     }
     return _currentGoon;
+  }
+  
+  void update() {
+    
+  }
+  
+  void draw() {
+    
   }
 }
 

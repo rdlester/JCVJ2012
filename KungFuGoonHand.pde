@@ -1,5 +1,5 @@
-class KungFuHand extends Hand {
-  KungFuHand() {
+class KungFuGoonHand extends Hand {
+  KungFuGoonHand() {
     super();
   }
   
