@@ -5,6 +5,7 @@ abstract class Character extends Tile {
   Character() {
     
     static class orientation();
+    static class position();
     
     void moveForward()
     {

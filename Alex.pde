@@ -5,6 +5,10 @@
 class Alex extends FiringCharacter {
   Alex() {
     
+    void moveForward2()
+    {
+    }
+    
   }
   
   void draw() {

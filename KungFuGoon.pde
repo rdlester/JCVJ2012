@@ -4,5 +4,10 @@
 class KungFuGoon extends Character {
   KungFuGoon() {
     super();
+    
+    void moveForward2()
+    {
+    }
   }
 }
+

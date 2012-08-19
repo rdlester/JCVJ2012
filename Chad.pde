@@ -5,6 +5,10 @@
 class Chad extends FiringCharacter {
   Chad() {
     
+    void moveForward2()
+    {
+    }
+    
   }
   
   void draw() {
