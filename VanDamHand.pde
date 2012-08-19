@@ -4,7 +4,6 @@ static class VanDamConsts {
 
   static final int ALEX_X = 22;
   static final int ALEX_Y = 102;
-  static final PImage ALEX_NAME = loadImage("images/UI/Name_Alex.png");
   static final int ALEX_NAME_X = 63;
   static final int ALEX_NAME_Y = 0;
   static final int ALEX_CARD1_X = 0;
@@ -22,7 +21,6 @@ static class VanDamConsts {
 
   static final int CHAD_X = 298;
   static final int CHAD_Y = 102;
-  static final PImage CHAD_NAME = loadImage("images/UI/Name_Chad.png");
   static final int CHAD_NAME_X = 40;
   static final int CHAD_NAME_Y = 0;
   static final int CHAD_CARD1_X = 0;
@@ -90,6 +88,9 @@ static class ChadProb {
 class VanDamHand extends Hand {
   Card[] _alexHand;
   Card[] _chadHand;
+  
+  PImage alexName = loadImage("images/UI/Name_Alex.png");
+  PImage chadName = loadImage("images/UI/Name_Chad.png");
 
   VanDamHand() {
     super();
@@ -108,7 +109,7 @@ class VanDamHand extends Hand {
     // Draw Title
     pushMatrix();
     translate(VanDamConsts.ALEX_NAME_X, VanDamConsts.ALEX_NAME_Y);
-    image(VanDamConsts.ALEX_NAME, 0, 0);
+    image(alexName, 0, 0);
     popMatrix();
 
     // Draw cards
@@ -146,7 +147,7 @@ class VanDamHand extends Hand {
     // Draw Title
     pushMatrix();
     translate(VanDamConsts.CHAD_NAME_X, VanDamConsts.CHAD_NAME_Y);
-    image(VanDamConsts.CHAD_NAME, 0, 0);
+    image(chadName, 0, 0);
     popMatrix();
 
     // Draw cards

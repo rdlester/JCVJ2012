@@ -30,6 +30,9 @@ class GoonsBoard extends Board {
         if (i == 0 || j == 0 || i == BoardConsts.GRID_W+1 || j == BoardConsts.GRID_H+1) {
           _grid[i][j] = new IndestructibleTile(); // Fill outer ring with Indestructible tiles
         }
+        else {
+          _grid[i][j] = new BlankTile();
+        }
       }
     }
   }
