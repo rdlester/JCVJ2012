@@ -13,7 +13,7 @@ static class TileType {
 static class Animations {
   static Animation GEN_DWN_Fwd = new Animation("data/images/GEN_DWN_Fwd", 1, 6, ".png", 150);
   static final int iGEN_DWN_Fwd = 1;
-  static Animation GEN_DWN_Back = new Animation("data/images/GEN_DWN_Back", 1, 6, ".png", 150);
+  static Animation GEN_DWN_Back = new Animation("data/images/GEN_DWN_Back", 1, 5, ".png", 150);
   static final int iGEN_DWN_Back = 2;
   static Animation GEN_DWN_Die = new Animation("data/images/GEN_DWN_Die", 1, 6, ".png", 150);
   static final int iGEN_DWN_Die = 3;
@@ -32,7 +32,7 @@ static class Animations {
   static Animation GEN_DWN_TurnRight = new Animation("data/images/GEN_DWN_TurnRight", 1, 6, ".png", 150);
   static final int iGEN_DWN_TurnRight = 10;
 
-  static Animation ALEX_DWN_Fire = new Animation("data/images/ALEX_DOWN_Fire", 1, 2, ".png", 150);
+  static Animation ALEX_DWN_Fire = new Animation("data/images/ALEX_DWN_Fire", 1, 2, ".png", 150);
   static final int iALEX_DWN_Fire = 11;
   static Animation ALEX_SIDE_Fire = new Animation("data/images/ALEX_SIDE_Fire", 1, 2, ".png", 150);
   static final int iALEX_SIDE_Fire = 12;
@@ -40,7 +40,7 @@ static class Animations {
   static final int iALEX_UP_Fire = 13;
 
 
-  static Animation CHAD_DWN_Fire = new Animation("data/images/CHAD_DOWN_Fire", 1, 2, ".png", 150);
+  static Animation CHAD_DWN_Fire = new Animation("data/images/CHAD_DWN_Fire", 1, 2, ".png", 150);
   static final int iCHAD_DWN_Fire = 14;
   static Animation CHAD_SIDE_Fire = new Animation("data/images/CHAD_SIDE_Fire", 1, 2, ".png", 150);
   static final int iCHAD_SIDE_Fire = 15;
@@ -48,15 +48,15 @@ static class Animations {
   static final int iCHAD_UP_Fire = 16;
 
 
-  static Animation EMYGUN_DOWN_Fire = new Animation("data/images/EMYGUN_DOWN_Fire", 1, 2, ".png", 150);
-  static final int iEMYGUN_DOWN_Fire = 17;
+  static Animation EMYGUN_DWN_Fire = new Animation("data/images/EMYGUN_DWN_Fire", 1, 2, ".png", 150);
+  static final int iEMYGUN_DWN_Fire = 17;
   static Animation EMYGUN_SIDE_Fire = new Animation("data/images/EMYGUN_SIDE_Fire", 1, 2, ".png", 150);
   static final int iEMYGUN_SIDE_Fire = 18;
   static Animation EMYGUN_UP_Fire = new Animation("data/images/EMYGUN_UP_Fire", 1, 2, ".png", 150);
   static final int iEMYGUN_UP_Fire = 19;
 
 
-  static Animation EMY_DWN_Die = new Animation("data/images/EMY_DOWN_Die", 1, 6, ".png", 150);
+  static Animation EMY_DWN_Die = new Animation("data/images/EMY_DWN_Die", 1, 6, ".png", 150);
   static final int iEMY_DWN_DIE = 20;
 
   static Animation CrateBreak = new Animation("data/images/CrateBreak", 1, 6, ".png", 150);
@@ -74,13 +74,13 @@ static class Animations {
 
 //The Gun animations repeat thrice.
 void animSetup() {
-  Animations.ALEX_DOWN_Fire.setNumberOfTimesToPlay(3);
+  Animations.ALEX_DWN_Fire.setNumberOfTimesToPlay(3);
   Animations.ALEX_SIDE_Fire.setNumberOfTimesToPlay(3);
   Animations.ALEX_UP_Fire.setNumberOfTimesToPlay(3);
-  Animations.CHAD_DOWN_Fire.setNumberOfTimesToPlay(3);
+  Animations.CHAD_DWN_Fire.setNumberOfTimesToPlay(3);
   Animations.CHAD_SIDE_Fire.setNumberOfTimesToPlay(3);
   Animations.CHAD_UP_Fire.setNumberOfTimesToPlay(3);
-  Animations.EMYGUN_DOWN_Fire.setNumberOfTimesToPlay(3);
+  Animations.EMYGUN_DWN_Fire.setNumberOfTimesToPlay(3);
   Animations.EMYGUN_SIDE_Fire.setNumberOfTimesToPlay(3);
   Animations.EMYGUN_UP_Fire.setNumberOfTimesToPlay(3);
 }
@@ -93,11 +93,30 @@ void animSetup() {
 abstract class Tile {
   int _type;
   int _hp;
-  boolean _animate = false;
-  AnimatedSprite _sprite = new AnimatedSprite();
+  boolean _animate;
+  AnimatedSprite _sprite;
 
   Tile(int type) {
     _type = type;
+    _animate = false;
+    _sprite = new AnimatedSprite();
+    _sprite.addAnimation(Animations.GEN_DWN_Fwd);
+    _sprite.addAnimation(Animations.GEN_DWN_Back);
+    _sprite.addAnimation(Animations.GEN_DWN_Die);
+    _sprite.addAnimation(Animations.GEN_DWN_Explode);
+    _sprite.addAnimation(Animations.GEN_DWN_Melee);
+    _sprite.addAnimation(Animations.GEN_DWN_Roundhouse);
+    _sprite.addAnimation(Animations.GEN_DWN_StrafeRight);
+    _sprite.addAnimation(Animations.GEN_DWN_StrafeLeft);
+    _sprite.addAnimation(Animations.GEN_DWN_TurnLeft);
+    _sprite.addAnimation(Animations.GEN_DWN_TurnRight);
+    _sprite.addAnimation(Animations.ALEX_DWN_Fire);
+    _sprite.addAnimation(Animations.ALEX_SIDE_Fire);
+    _sprite.addAnimation(Animations.ALEX_UP_Fire);
+    _sprite.addAnimation(Animations.CHAD_DWN_Fire);
+    _sprite.addAnimation(Animations.CHAD_SIDE_Fire);
+    _sprite.addAnimation(Animations.CHAD_UP_Fire);
+    //Add more
     
   }
 
@@ -115,15 +134,4 @@ abstract class Tile {
   }
 
   abstract void draw();
-  
-  void drawAnimation() {
-    
-  }
 }
-
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> 171d6a95d7814220815bb6b14266067d9b11d5bc

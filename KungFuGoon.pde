@@ -4,6 +4,7 @@
 class KungFuGoon extends Character {
   KungFuGoon(Board board) {
     super(TileType.GUN_GOON, board);
+    _sprite.setActiveAnimation(Animations.iGEN_DWN_Fwd);
   }
 
   void moveForward2()
@@ -119,6 +120,10 @@ class KungFuGoon extends Character {
 
   void draw() {
     
+  }
+  
+  void drawAnimation() { 
+    super.drawAnimation();
   }
 }
 

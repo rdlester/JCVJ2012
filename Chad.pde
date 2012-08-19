@@ -5,11 +5,15 @@
 class Chad extends VanDammes {
   Chad(Board board) {
     super(TileType.CHAD, board);
+    _sprite.setActiveAnimation(Animations.iGEN_DWN_Fwd);
   }
  
   void draw() {
   }
   
+  void drawAnimation() { 
+    super.drawAnimation();
+  }
 }
 
 
