@@ -39,11 +39,14 @@ class GoonsBoard extends Board {
     }
     
     _grid[1][1] = new BarrelTile();
-    _grid[1][1]
     _grid[3][1] = new VictoryTile();
-    _grid[1][1]
     _grid[5][1] = new BarrelTile();
-    _grid[6][1] = new BarrelTile();
+    _grid[6][1] = new VictoryTile();
+    _grid[8][1] = new CrateTile();
+    _grid[2][2] = _goons[0];
+    _grid[5][2] = _goons[3];
+    _grid[8][2] = new CrateTile();
+    /*_grid[1][1]
     _grid[1][1]
     _grid[1][1]
     _grid[1][1]
@@ -112,12 +115,7 @@ class GoonsBoard extends Board {
     _grid[1][1]
     _grid[1][1]
     _grid[1][1]
-    _grid[1][1]
-    _grid[1][1]
-    _grid[1][1]
-    _grid[1][1]
-    _grid[1][1]
-    _grid[1][1]
+    _grid[1][1]*/
   }
   
   boolean getReady() {

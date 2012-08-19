@@ -41,8 +41,11 @@ class TurnController extends Being {
   Card getNextVDMove() {
     //assert (_queue != null): println("TurnController _queue is null, no next move");
     //assert _queue.size() > 0: println("TurnController: no more VD moves to play! go back to planning");
+    println("got card");
     _state = TurnState.ANIM_VD;
-    return _queue.remove(0);
+    Card c = _queue.get(0);
+    _queue.remove(0);
+    return c;
   }
   
   void animVDFinished(int goon) {

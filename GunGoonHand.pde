@@ -84,33 +84,33 @@ class GunGoonHand extends GoonHand {
       _gunHand[6].draw();
       popMatrix();
       
-      if (key == POConstants.Q && !getReady) {
-            _queue.add(_goonHand[0]);
-            setReady = true;
+      if (key == POConstants.Q && !getReady()) {
+            _queue = _gunHand[0];
+            setReady(true);
         }
-        else if (key == POConstants.W && !getReady) {
-            _queue.add(_goonHand[1]);
-            setReady = true;
+        else if (key == POConstants.W && !getReady()) {
+            _queue = _gunHand[1];
+            setReady(true);
         } 
-        else if (key == POConstants.E && !getReady) {
-            _queue.add(_goonHand[2]);
-            setReady = true;
+        else if (key == POConstants.E && !getReady()) {
+            _queue = _gunHand[2];
+            setReady(true);
         }
-        else if (key == POConstants.R && !getReady) {
-            _queue.add(_goonHand[3]);
-            setReady = true;
+        else if (key == POConstants.R && !getReady()) {
+            _queue = _gunHand[3];
+            setReady(true);
         }  
-        else if (key == POConstants.A && !getReady) {
-            _queue.add(_goonHand[4]);
-            setReady = true;
+        else if (key == POConstants.A && !getReady()) {
+            _queue = _gunHand[4];
+            setReady(true);
         }
-        else if (key == POConstants.S && !getReady) {
-            _queue.add(_goonHand[5]);
-            setReady = true;
+        else if (key == POConstants.S && !getReady()) {
+            _queue = _gunHand[5];
+            setReady(true);
         }
-        else if (key == POConstants.D && !getReady) {
-            _queue.add(_goonHand[6]);
-            setReady = true;
+        else if (key == POConstants.D && !getReady()) {
+            _queue = _gunHand[6];
+            setReady(true);
         }
         
     }

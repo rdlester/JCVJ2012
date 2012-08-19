@@ -149,7 +149,7 @@ class VanDamHand extends Hand {
       _chadHand[3] = chadDrawCard();
     }
     
-    return _queue;
+    return temp;
   }
 
   void draw() {
