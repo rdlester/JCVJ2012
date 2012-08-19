@@ -1,14 +1,14 @@
 static class ActionImgs {
-  static final String BASE = "images/Cards/";
-  static final String DODGE = BASE + "";
-  static final String MELEE = BASE + "";
-  static final String FIRE = BASE + "";
-  static final String ATTACK = BASE + "";
-  static final String ROUNDHOUSE = BASE + "";
-  static final String ROLL_L = BASE + "";
-  static final String ROLL_R = BASE + "";
-  static final String DIVE = BASE + "";
-  static final String KICK = BASE + "";
+  static final String BASE = "images/Cards/Card_";
+  static final String DODGE = BASE + "Dodge.png";
+  static final String MELEE = BASE + "Melee.png";
+  static final String FIRE = BASE + "Fire.png";
+  static final String ATTACK = BASE + "Attack.png";
+  static final String ROUNDHOUSE = BASE + "Roundhouse.png";
+  static final String ROLL_L = BASE + "AkimboLeft.png";
+  static final String ROLL_R = BASE + "AkimboRight.png";
+  static final String DIVE = BASE + "DivingShot.png";
+  static final String KICK = BASE + "FlyingKick.png";
 }
 
 class DodgeCard extends Card {
@@ -19,10 +19,6 @@ class DodgeCard extends Card {
   void execute(Character c) {
     c.actionDodge();
   }
-  
-  void draw() {
-    
-  }
 }
 
 class MeleeCard extends Card {
@@ -32,10 +28,6 @@ class MeleeCard extends Card {
   
   void execute(Character c) {
     c.actionMelee();
-  }
-  
-  void draw() {
-    
   }
 }
 
@@ -51,10 +43,6 @@ class FireCard extends Card {
   void execute(FiringCharacter c) {
     c.actionFire();
   }
-  
-  void draw() {
-    
-  }
 }
 
 class AttackCard extends Card {
@@ -64,10 +52,6 @@ class AttackCard extends Card {
   
   void execute(Character c) {
     c.actionAttack();
-  }
-  
-  void draw() {
-    
   }
 }
 
@@ -79,10 +63,6 @@ class RoundhouseCard extends Card {
   void execute(Character c) {
     c.actionRoundhouse();
   }
-  
-  void draw() {
-    
-  }
 }
 
 class RollingAkimboLeftCard extends Card {
@@ -92,10 +72,6 @@ class RollingAkimboLeftCard extends Card {
   
   void execute(Character c) {
     c.actionRollingPistolsRight();
-  }
-  
-  void draw() {
-    
   }
 }
 
@@ -107,10 +83,6 @@ class RollingAkimboRightCard extends Card {
   void execute(Character c) {
     c.actionRollingPistolsLeft();
   }
-  
-  void draw() {
-    
-  }
 }
 
 class DivingShotCard extends Card {
@@ -120,10 +92,6 @@ class DivingShotCard extends Card {
   
   void execute(Character c) {
     c.actionDivingShot();
-  }
-  
-  void draw() {
-    
   }
 }
 
@@ -135,9 +103,6 @@ class FlyingKickCard extends Card {
   void execute(Character c) {
     c.actionFlyingKick();
   }
-  
-  void draw() {
-    
-  }
 }
+
 

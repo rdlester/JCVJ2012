@@ -90,6 +90,12 @@ abstract class Tile {
   }
 
   abstract void draw();
+  
+  void drawAnimation() {
+    
+  }
 }
+
+
 
 

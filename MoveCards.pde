@@ -1,13 +1,13 @@
 static class MoveImgs {
-  static final String BASE = "images/Cards/";
-  static final String F1 = BASE + "";
-  static final String F2 = BASE + "";
-  static final String RL = BASE + "";
-  static final String RR = BASE + "";
-  static final String UTURN = BASE + "";
-  static final String SL = BASE + "";
-  static final String SR = BASE + "";
-  static final String BACK = BASE + "";
+  static final String BASE = "images/Cards/Card_";
+  static final String F1 = BASE + "Fwd.png";
+  static final String F2 = BASE + "Fwd2.png";
+  static final String RL = BASE + "RotateLeft.png";
+  static final String RR = BASE + "RotateRight.png";
+  static final String UTURN = BASE + "Rotate180.png";
+  static final String SL = BASE + "StrafeLeft.png";
+  static final String SR = BASE + "StrafeRight.png";
+  static final String BACK = BASE + "Back.png";
 }
 
 class ForwardOneCard extends Card {
@@ -17,10 +17,6 @@ class ForwardOneCard extends Card {
   
   void execute(Character c) {
     c.moveForward();
-  }
-  
-  void draw() {
-    
   }
 }
 
@@ -32,10 +28,6 @@ class ForwardTwoCard extends Card {
   void execute(Character c) {
     c.moveForward2();
   }
-  
-  void draw() {
-    
-  }
 }
 
 class RotateLeftCard extends Card {
@@ -45,10 +37,6 @@ class RotateLeftCard extends Card {
   
   void execute(Character c) {
     c.rotateLeft();
-  }
-  
-  void draw() {
-    
   }
 }
 
@@ -60,10 +48,6 @@ class RotateRightCard extends Card {
   void execute(Character c) {
     c.rotateRight();
   }
-  
-  void draw() {
-    
-  }
 }
 
 class UTurnCard extends Card {
@@ -73,10 +57,6 @@ class UTurnCard extends Card {
   
   void execute(Character c) {
     c.rotateUTurn();
-  }
-  
-  void draw() {
-    
   }
 }
 
@@ -88,10 +68,6 @@ class StrafeLeftCard extends Card {
   void execute(Character c) {
     c.moveStrafeLeft();
   }
-  
-  void draw() {
-    
-  }
 }
 
 class StrafeRightCard extends Card {
@@ -101,10 +77,6 @@ class StrafeRightCard extends Card {
   
   void execute(Character c) {
     c.moveStrafeRight();
-  }
-  
-  void draw() {
-    
   }
 }
 
@@ -116,9 +88,7 @@ class BackCard extends Card {
   void execute(Character c) {
     c.moveBackward();
   }
-  
-  void draw() {
-    
-  }
 }
+
+
 
