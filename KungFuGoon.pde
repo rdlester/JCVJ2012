@@ -9,6 +9,10 @@ class KungFuGoon extends Character {
   void moveForward2()
   {
   }
+  
+  void draw() {
+    
+  }
 }
 
 

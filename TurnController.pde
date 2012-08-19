@@ -16,8 +16,8 @@ class TurnController extends HObject {
 
   TurnController(Board board, VanDamHand vanDamHand) {
     _board = board;
-    _vanDamHand = vanDamHand;
-    _state = TurnState.VAN_DAM;
+    _vamDamHand = vanDamHand;
+    _state = TurnState.PLANNING;
   }
 
   void nextTurn() {

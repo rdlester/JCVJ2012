@@ -31,24 +31,25 @@ abstract class Character extends Tile {
     
     void moveForward()
     {
+      Tile next, last;
       switch (_orientation) {
             case Orientation.N:
-              Tile next = _board.get(_x, _y-1);
-              Tile last = _board.get(_x, _y-2);
+              next = _board.get(_x, _y-1);
+              last = _board.get(_x, _y-2);
               switch (next.getType()) {
                 case TileType.BLANK:
-                  board.set (_x,_y,next);
+                  _board.set (_x,_y,next);
                   _y-=1;
-                  board.set (_x,_y,this);
+                  _board.set (_x,_y,this);
                   break;
                 case TileType.BARREL:
                 case TileType.CRATE:
-                  if (last.getType == "BLANK"){
-                    board.set (_x,_y,last);
+                  if (last.getType() == TileType.BLANK){
+                    _board.set (_x,_y,last);
                     _y-=1;
-                    board.set (_x,_y,this);
+                    _board.set (_x,_y,this);
                     _y-=1;
-                    board.set (_x,_y,next);
+                    _board.set (_x,_y,next);
                   } else{
                     
                   }
@@ -58,22 +59,22 @@ abstract class Character extends Tile {
                   break;                
               }
             case Orientation.E:
-              Tile next = _board.get(_x+1, _y);
-              Tile last = _board.get(_x+2, _y);
+              next = _board.get(_x+1, _y);
+              last = _board.get(_x+2, _y);
               switch (next.getType()) {
                 case TileType.BLANK:
-                  board.set (_x,_y,next);
+                  _board.set (_x,_y,next);
                   _x+=1;
-                  board.set (_x,_y,this);
+                  _board.set (_x,_y,this);
                   break;
                 case TileType.BARREL:
                 case TileType.CRATE:
-                  if (last.getType == "BLANK"){
-                    board.set (_x,_y,last);
+                  if (last.getType() == TileType.BLANK){
+                    _board.set (_x,_y,last);
                     _x+=1;
-                    board.set (_x,_y,this);
+                    _board.set (_x,_y,this);
                     _x+=1;
-                    board.set (_x,_y,next);
+                    _board.set (_x,_y,next);
                   }
                   else{
                   }
@@ -83,22 +84,22 @@ abstract class Character extends Tile {
                   break;                
               }
             case Orientation.S:
-              Tile next = _board.get(_x, _y+1);
-              Tile last = _board.get(_x, _y+2);
+              next = _board.get(_x, _y+1);
+              last = _board.get(_x, _y+2);
               switch (next.getType()) {
                 case TileType.BLANK:
-                  board.set (_x,_y,next);
+                  _board.set (_x,_y,next);
                   _y+=1;
-                  board.set (_x,_y,this);
+                  _board.set (_x,_y,this);
                   break;
                 case TileType.BARREL:
                 case TileType.CRATE:
-                  if (last.getType == "BLANK"){
-                    board.set (_x,_y,last);
+                  if (last.getType() == TileType.BLANK){
+                    _board.set (_x,_y,last);
                     _y+=1;
-                    board.set (_x,_y,this);
+                    _board.set (_x,_y,this);
                     _y+=1;
-                    board.set (_x,_y,next);
+                    _board.set (_x,_y,next);
                   }
                   else{
                   }
@@ -108,22 +109,22 @@ abstract class Character extends Tile {
                   break;                
               }
             case Orientation.W:
-              Tile next = _board.get(_x-1, _y);
-              Tile last = _board.get(_x-2, _y);
+              next = _board.get(_x-1, _y);
+              last = _board.get(_x-2, _y);
               switch (next.getType()) {
                 case TileType.BLANK:
-                  board.set (_x,_y,next);
+                  _board.set (_x,_y,next);
                   _x-=1;
-                  board.set (_x,_y,this);
+                  _board.set (_x,_y,this);
                   break;
                 case TileType.BARREL:
                 case TileType.CRATE:
-                  if (last.getType == "BLANK"){
-                    board.set (_x,_y,last);
+                  if (last.getType() == TileType.BLANK){
+                    _board.set (_x,_y,last);
                     _x-=1;
-                    board.set (_x,_y,this);
+                    _board.set (_x,_y,this);
                     _x-=1;
-                    board.set (_x,_y,next);
+                    _board.set (_x,_y,next);
                   }
                   else{
                   }
@@ -137,24 +138,25 @@ abstract class Character extends Tile {
     
     void moveBackward()
     {
+      Tile next, last;
       switch (_orientation) {
             case Orientation.N:
-              Tile next = _board.get(_x, _y+1);
-              Tile last = _board.get(_x, _y+2);
+              next = _board.get(_x, _y+1);
+              last = _board.get(_x, _y+2);
               switch (next.getType()) {
                 case TileType.BLANK:
-                  board.set (_x,_y,next);
+                  _board.set (_x,_y,next);
                   _y+=1;
-                  board.set (_x,_y,this);
+                  _board.set (_x,_y,this);
                   break;
                 case TileType.BARREL:
                 case TileType.CRATE:
-                  if (last.getType == "BLANK"){
-                    board.set (_x,_y,last);
+                  if (last.getType() == TileType.BLANK){
+                    _board.set (_x,_y,last);
                     _y+=1;
-                    board.set (_x,_y,this);
+                    _board.set (_x,_y,this);
                     _y+=1;
-                    board.set (_x,_y,next);
+                    _board.set (_x,_y,next);
                   }
                   else{
                   }
@@ -164,22 +166,22 @@ abstract class Character extends Tile {
                   break;                
               }
             case Orientation.E:
-              Tile next = _board.get(_x-1, _y);
-              Tile last = _board.get(_x-2, _y);
+              next = _board.get(_x-1, _y);
+              last = _board.get(_x-2, _y);
               switch (next.getType()) {
                 case TileType.BLANK:
-                  board.set (_x,_y,next);
+                  _board.set (_x,_y,next);
                   _x-=1;
-                  board.set (_x,_y,this);
+                  _board.set (_x,_y,this);
                   break;
                 case TileType.BARREL:
                 case TileType.CRATE:
-                  if (last.getType == "BLANK"){
-                    board.set (_x,_y,last);
+                  if (last.getType() == TileType.BLANK){
+                    _board.set (_x,_y,last);
                     _x-=1;
-                    board.set (_x,_y,this);
+                    _board.set (_x,_y,this);
                     _x-=1;
-                    board.set (_x,_y,next);
+                    _board.set (_x,_y,next);
                   }
                   else{
                   }
@@ -189,22 +191,22 @@ abstract class Character extends Tile {
                   break;                
               }
             case Orientation.S:
-              Tile next = _board.get(_x, _y-1);
-              Tile last = _board.get(_x, _y-2);
+              next = _board.get(_x, _y-1);
+              last = _board.get(_x, _y-2);
               switch (next.getType()) {
                 case TileType.BLANK:
-                  board.set (_x,_y,next);
+                  _board.set (_x,_y,next);
                   _y-=1;
-                  board.set (_x,_y,this);
+                  _board.set (_x,_y,this);
                   break;
                 case TileType.BARREL:
                 case TileType.CRATE:
-                  if (last.getType == "BLANK"){
-                    board.set (_x,_y,last);
+                  if (last.getType() == TileType.BLANK){
+                    _board.set (_x,_y,last);
                     _y-=1;
-                    board.set (_x,_y,this);
+                    _board.set (_x,_y,this);
                     _y-=1;
-                    board.set (_x,_y,next);
+                    _board.set (_x,_y,next);
                   }
                   else{
                   }
@@ -214,22 +216,22 @@ abstract class Character extends Tile {
                   break;                
               }
             case Orientation.W:
-              Tile next = _board.get(_x+1, _y);
-              Tile last = _board.get(_x+2, _y);
+              next = _board.get(_x+1, _y);
+              last = _board.get(_x+2, _y);
               switch (next.getType()) {
                 case TileType.BLANK:
-                  board.set (_x,_y,next);
+                  _board.set (_x,_y,next);
                   _x+=1;
-                  board.set (_x,_y,this);
+                  _board.set (_x,_y,this);
                   break;
                 case TileType.BARREL:
                 case TileType.CRATE:
-                  if (last.getType == "BLANK"){
-                    board.set (_x,_y,last);
+                  if (last.getType() == TileType.BLANK){
+                    _board.set (_x,_y,last);
                     _x+=1;
-                    board.set (_x,_y,this);
+                    _board.set (_x,_y,this);
                     _x+=1;
-                    board.set (_x,_y,next);
+                    _board.set (_x,_y,next);
                   }
                   else{
                   }
@@ -314,20 +316,21 @@ abstract class Character extends Tile {
     
     void actionMelee()
     {
+      Tile next, last;
       switch (_orientation) {
             case Orientation.N:
-              Tile next = _board.get(_x, _y-1);
-              Tile last = _board.get(_x, _y-2);
+              next = _board.get(_x, _y-1);
+              last = _board.get(_x, _y-2);
               switch (next.getType()) {
                 case TileType.BLANK:
                   break;
                 case TileType.BARREL:
                 case TileType.CRATE:
-                  if (last.getType == "BLANK"){
+                  if (last.getType() == TileType.BLANK){
                     _y-=1;
-                    board.set (_x,_y,last);
+                    _board.set (_x,_y,last);
                     _y-=1;
-                    board.set (_x,_y,next);
+                    _board.set (_x,_y,next);
                   }
                   else{
                   }
@@ -337,18 +340,18 @@ abstract class Character extends Tile {
                   break;                
               }
             case Orientation.E:
-              Tile next = _board.get(_x+1, _y);
-              Tile last = _board.get(_x+2, _y);
+              next = _board.get(_x+1, _y);
+              last = _board.get(_x+2, _y);
               switch (next.getType()) {
                 case TileType.BLANK:
                   break;
                 case TileType.BARREL:
                 case TileType.CRATE:
-                  if (last.getType == "BLANK"){
+                  if (last.getType() == TileType.BLANK){
                     _x+=1;
-                    board.set (_x,_y,last);
+                    _board.set (_x,_y,last);
                     _x+=1;
-                    board.set (_x,_y,next);
+                    _board.set (_x,_y,next);
                   }
                   else{
                   }
@@ -358,18 +361,18 @@ abstract class Character extends Tile {
                   break;                
               }
             case Orientation.S:
-              Tile next = _board.get(_x, _y+1);
-              Tile last = _board.get(_x, _y+2);
+              next = _board.get(_x, _y+1);
+              last = _board.get(_x, _y+2);
               switch (next.getType()) {
                 case TileType.BLANK:
                   break;
                 case TileType.BARREL:
                 case TileType.CRATE:
-                  if (last.getType == "BLANK"){
+                  if (last.getType() == TileType.BLANK){
                     _y+=1;
-                    board.set (_x,_y,last);
+                    _board.set (_x,_y,last);
                     _y+=1;
-                    board.set (_x,_y,next);
+                    _board.set (_x,_y,next);
                   }
                   else{
                   }
@@ -379,18 +382,18 @@ abstract class Character extends Tile {
                   break;                
               }
             case Orientation.W:
-              Tile next = _board.get(_x-1, _y);
-              Tile last = _board.get(_x-2, _y);
+              next = _board.get(_x-1, _y);
+              last = _board.get(_x-2, _y);
               switch (next.getType()) {
                 case TileType.BLANK:
                   break;
                 case TileType.BARREL:
                 case TileType.CRATE:
-                  if (last.getType == "BLANK"){
+                  if (last.getType() == TileType.BLANK){
                     _x-=1;
-                    board.set (_x,_y,last);
+                    _board.set (_x,_y,last);
                     _x-=1;
-                    board.set (_x,_y,next);
+                    _board.set (_x,_y,next);
                   }
                   else{
                   }
@@ -406,52 +409,52 @@ abstract class Character extends Tile {
     
     void moveForward2()
     {
-      throw new Exception();
+      throw new RuntimeException();
     }
     
     void moveStrafeRight()
     {
-      throw new Exception();
+      throw new RuntimeException();
     }
     
     void moveStrafeLeft()
     {
-      throw new Exception();
+      throw new RuntimeException();
     }
     
     void actionFire()
     {
-      throw new Exception();
+      throw new RuntimeException();
     }
     
     void actionRoundhouse()
     {
-      throw new Exception();
+      throw new RuntimeException();
     }
     
     void actionAttack()
     {
-      throw new Exception();
+      throw new RuntimeException();
     }
     
     void actionRollingPistolsRight()
     {
-      throw new Exception();
+      throw new RuntimeException();
     }
     
     void actionRollingPistolsLeft()
     {
-      throw new Exception();
+      throw new RuntimeException();
     }
     
     void actionFlyingKick()
     {
-      throw new Exception();
+      throw new RuntimeException();
     }
     
     void actionDivingShot()
     {
-      throw new Exception();
+      throw new RuntimeException();
     }
       
 }

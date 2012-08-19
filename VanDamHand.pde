@@ -7,8 +7,8 @@
  * Player queues multiple cards to execute in a turn
  */
 class VanDamHand extends Hand {
-  PlayerHand() {
-    super(new Rectangle(HandConsts.HAND_X, HandConsts.HAND_Y, HandConsts.HAND_W, HandConsts.HAND_H));
+  VanDamHand() {
+    super();
   }
 
   void update() {
@@ -19,6 +19,5 @@ class VanDamHand extends Hand {
     super.draw();
   }
 }
-
 
 

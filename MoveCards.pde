@@ -74,7 +74,7 @@ class StrafeLeftCard extends Card {
   }
   
   void execute(Character c) {
-    c.strafeLeft();
+    c.moveStrafeLeft();
   }
   
   void draw() {
@@ -88,7 +88,7 @@ class StrafeRightCard extends Card {
   }
   
   void execute(Character c) {
-    c.strafeRight();
+    c.moveStrafeRight();
   }
   
   void draw() {
@@ -102,7 +102,7 @@ class BackCard extends Card {
   }
   
   void execute(Character c) {
-    c.moveBack();
+    c.moveBackward();
   }
   
   void draw() {

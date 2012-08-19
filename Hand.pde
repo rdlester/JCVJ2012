@@ -14,7 +14,7 @@ static class HandConsts {
 class Hand extends Being {
   ArrayList<Card> _cards;
   
-  Hand(Rectangle shape) {
+  Hand() {
     super(new Rectangle(HandConsts.HAND_X, HandConsts.HAND_Y, HandConsts.HAND_W, HandConsts.HAND_H));
     _cards = new ArrayList<Card>();
   }

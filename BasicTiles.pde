@@ -28,7 +28,7 @@ class CrateTile extends Tile {
   }
 }
 
-class IndestructibleTile {
+class IndestructibleTile extends Tile {
   IndestructibleTile() {
     super(TileType.INDESTRUCTIBLE);
   }

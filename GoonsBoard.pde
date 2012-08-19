@@ -16,10 +16,10 @@ class GoonsBoard extends Board {
 
   void initBoard() {
     for (int i = 0; i < GoonsConsts.KUNG_FU_NUM; i++) {
-      _goons.add(new KungFuGoon());
+      _goons[i] = new KungFuGoon(this);
     }
-    for (int i = 0; i < GoonsConsts.GUN_NUM; i++) {
-      _goons.add(new GunGoon());
+    for (int i = GoonsConsts.KUNG_FU_NUM; i < GoonsConsts.NUM; i++) {
+      _goons[i] = new GunGoon(this);
     }
     for (int i = 0; i < BoardConsts.GRID_W; i++) {
       for (int j = 0; j < BoardConsts.GRID_H; j++) {

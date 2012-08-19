@@ -78,7 +78,7 @@ class RollingAkimboLeftCard extends Card {
   }
   
   void execute(Character c) {
-    c.actionRollingAkimboLeft();
+    c.actionRollingPistolsRight();
   }
   
   void draw() {
@@ -92,7 +92,7 @@ class RollingAkimboRightCard extends Card {
   }
   
   void execute(Character c) {
-    c.actionRollingAkimboRight();
+    c.actionRollingPistolsLeft();
   }
   
   void draw() {
