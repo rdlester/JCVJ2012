@@ -6,14 +6,21 @@ static class Player {
   static final int KARA = 4;
 }
 
+static class CardConsts {
+  static final int CARD_W = 116;
+  static final int CARD_H = 176;
+}
+
 /**
  * Card - represents game action
  * Associated with player
  */
 abstract class Card {
+  PImage _card;
   int _player;
 
-  Card(int player) {
+  Card(int player, String card) {
+    _card = loadImage(card);
     _player = player;
   }
 
@@ -23,7 +30,9 @@ abstract class Card {
 
   abstract void execute(Character c);
 
-  abstract void draw();
+  void draw() {
+    image(_card, 0, 0);
+  }
 }
 
 

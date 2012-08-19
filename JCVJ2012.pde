@@ -19,8 +19,8 @@ import static hermes.postoffice.POConstants.*;
  * Constants should go up here
  * Making more things constants makes them easier to adjust and play with!
  */
-static final int WINDOW_WIDTH = 800;
-static final int WINDOW_HEIGHT = 800;
+static final int WINDOW_WIDTH = 1280;
+static final int WINDOW_HEIGHT = 960;
 
 World currentWorld;
 

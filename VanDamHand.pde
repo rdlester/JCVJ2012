@@ -4,6 +4,7 @@ static class VanDamConsts {
 
   static final int ALEX_X = 22;
   static final int ALEX_Y = 102;
+  static final String ALEX_NAME = "images/UI/Name_Alex.png";
   static final int ALEX_NAME_X = 63;
   static final int ALEX_NAME_Y = 0;
   static final int ALEX_CARD1_X = 0;
@@ -21,6 +22,7 @@ static class VanDamConsts {
 
   static final int CHAD_X = 298;
   static final int CHAD_Y = 102;
+  static final String CHAD_NAME = "images/UI/Name_Chad.png";
   static final int CHAD_NAME_X = 40;
   static final int CHAD_NAME_Y = 0;
   static final int CHAD_CARD1_X = 0;
@@ -89,8 +91,8 @@ class VanDamHand extends Hand {
   Card[] _alexHand;
   Card[] _chadHand;
   
-  PImage alexName = loadImage("images/UI/Name_Alex.png");
-  PImage chadName = loadImage("images/UI/Name_Chad.png");
+  PImage alexName = loadImage(VanDamConsts.ALEX_NAME);
+  PImage chadName = loadImage(VanDamConsts.CHAD_NAME);
 
   VanDamHand() {
     super();

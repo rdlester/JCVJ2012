@@ -1,6 +1,18 @@
+static class MoveImgs {
+  static final String BASE = "images/Cards/";
+  static final String F1 = BASE + "";
+  static final String F2 = BASE + "";
+  static final String RL = BASE + "";
+  static final String RR = BASE + "";
+  static final String UTURN = BASE + "";
+  static final String SL = BASE + "";
+  static final String SR = BASE + "";
+  static final String BACK = BASE + "";
+}
+
 class ForwardOneCard extends Card {
   ForwardOneCard(int player) {
-    super(player);
+    super(player, MoveImgs.F1);
   }
   
   void execute(Character c) {
@@ -14,7 +26,7 @@ class ForwardOneCard extends Card {
 
 class ForwardTwoCard extends Card {
   ForwardTwoCard(int player) {
-    super(player);
+    super(player, MoveImgs.F2);
   }
   
   void execute(Character c) {
@@ -28,7 +40,7 @@ class ForwardTwoCard extends Card {
 
 class RotateLeftCard extends Card {
   RotateLeftCard(int player) {
-    super(player);
+    super(player, MoveImgs.RL);
   }
   
   void execute(Character c) {
@@ -42,7 +54,7 @@ class RotateLeftCard extends Card {
 
 class RotateRightCard extends Card {
   RotateRightCard(int player) {
-    super(player);
+    super(player, MoveImgs.RR);
   }
   
   void execute(Character c) {
@@ -56,7 +68,7 @@ class RotateRightCard extends Card {
 
 class UTurnCard extends Card {
   UTurnCard(int player) {
-    super(player);
+    super(player, MoveImgs.UTURN);
   }
   
   void execute(Character c) {
@@ -70,7 +82,7 @@ class UTurnCard extends Card {
 
 class StrafeLeftCard extends Card {
   StrafeLeftCard(int player) {
-    super(player);
+    super(player, MoveImgs.SL);
   }
   
   void execute(Character c) {
@@ -84,7 +96,7 @@ class StrafeLeftCard extends Card {
 
 class StrafeRightCard extends Card {
   StrafeRightCard(int player) {
-    super(player);
+    super(player, MoveImgs.SR);
   }
   
   void execute(Character c) {
@@ -98,7 +110,7 @@ class StrafeRightCard extends Card {
 
 class BackCard extends Card {
   BackCard(int player) {
-    super(player);
+    super(player, MoveImgs.BACK);
   }
   
   void execute(Character c) {
