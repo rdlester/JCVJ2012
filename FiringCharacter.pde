@@ -20,7 +20,7 @@ abstract class FiringCharacter extends Character {
             case TileType.CRATE:
               stopIt = true;
               break;
-            case TileType.BARREL; //Will remove 1 hp rigging it to explode. Explosion handled somewhere else?
+            case TileType.BARREL: 
             case TileType.ALEX:
             case TileType.CHAD:
             case TileType.GUN_GOON:
@@ -48,7 +48,7 @@ abstract class FiringCharacter extends Character {
             case TileType.CRATE:
               stopIt = true;
               break;
-            case TileType.BARREL; //Will remove 1 hp rigging it to explode. Explosion handled somewhere else?
+            case TileType.BARREL: //Will remove 1 hp rigging it to explode. Explosion handled somewhere else?
             case TileType.ALEX:
             case TileType.CHAD:
             case TileType.GUN_GOON:
