@@ -7,6 +7,7 @@ static class TileType {
   static final int CHAD = 5;
   static final int GUN_GOON = 6;
   static final int KUNG_FU_GOON = 7;
+  static final int VICTORY = 8;
 }
 
 /**
