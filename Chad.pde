@@ -6,8 +6,8 @@ class Chad extends FiringCharacter {
   Chad(Board board) {
     super(TileType.CHAD, board);
   }
-
-  void moveForward2()
+  
+    void moveForward2()
   {
   }
 
