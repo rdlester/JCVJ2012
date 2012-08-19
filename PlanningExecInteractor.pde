@@ -1,10 +1,10 @@
-class PlanningFinishedInteractor extends Interactor<TurnController, VanDamHand> {
+class PlanVDInteractor extends Interactor<TurnController, VanDamHand> {
   PlanningInteractor() {
     super();
   }
   
   boolean detect(TurnController t, VanDamHand h) {
-    return h.isReady() && t.getState() == TurnState.PLANNING;
+    return h.isReady() && t.getState() == TurnState.PLAN_VD;
   }
   
   void handle(TurnController t, VanDamHand h) {
