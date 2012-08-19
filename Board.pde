@@ -54,7 +54,7 @@ abstract class Board extends Being {
     return _chad;
   }
 
-  public nextCard(Card c) {
+  public void nextCard(Card c) {
     _playedCard = c;
   }
 
@@ -68,11 +68,11 @@ abstract class Board extends Being {
   public void playCard(int player) {
     if (player == Player.ALEX) {
       _playedCard.execute(getAlex());
-      _playedCard == null;
+      _playedCard = null;
     } 
     else if (player == Player.CHAD) {
       _playedCard.execute(getChad());
-      _playedCard == null;
+      _playedCard = null;
     }
   }
 

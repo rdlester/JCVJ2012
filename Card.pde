@@ -21,7 +21,7 @@ abstract class Card {
     return _player;
   }
 
-  abstract void execute();
+  abstract void execute(Character c);
 
   abstract void draw();
 }
