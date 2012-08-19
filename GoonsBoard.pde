@@ -30,7 +30,11 @@ class GoonsBoard extends Board {
   void playCard(int player) {
     super.playCard(player);
     if (player == Player.GOON) {
-      _playedCard.execute(_currentGoon);
+      if (_currentGoon.getType() == TileType.GUN_GOON) {
+        _playedCard.execute((GunGoon)_currentGoon);
+      } else if (_currentGoon.getType() == TileType.KUNG_FU_GOON) {
+        _playedCard.execute((KungFuGoon)_currentGoon);
+      }
     }
   }
 

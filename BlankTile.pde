@@ -1,5 +1,5 @@
 class BlankTile extends Tile {
-  BlankTile {
+  BlankTile() {
     super(TileType.BLANK);
   }
   
