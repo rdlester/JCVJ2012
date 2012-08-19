@@ -9,7 +9,14 @@ class LevelPvPGoons extends Level {
   }
 
   void setup() {
-    super.setup();
+    register(new GoonsBoard());
+    register(new VanDamHand());
+    register(new GunGoonHand());
+    register(new KungFuGoonHand());
+    
+    // Interactions between TurnController and objects
+    
+    // Subscriptions
   }
 }
 

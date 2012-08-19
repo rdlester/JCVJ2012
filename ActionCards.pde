@@ -12,6 +12,20 @@ class DodgeCard extends Card {
   }
 }
 
+class MeleeCard extends Card {
+  MeleeCard(int player) {
+    super(player);
+  }
+  
+  void execute(Character c) {
+    c.actionMelee();
+  }
+  
+  void draw() {
+    
+  }
+}
+
 class FireCard extends Card {
   FireCard(int player) {
     super(player);
@@ -23,20 +37,6 @@ class FireCard extends Card {
   
   void execute(FiringCharacter c) {
     c.actionFire();
-  }
-  
-  void draw() {
-    
-  }
-}
-
-class MeleeCard extends Card {
-  MeleeCard(int player) {
-    super(player);
-  }
-  
-  void execute(Character c) {
-    c.actionMelee();
   }
   
   void draw() {
