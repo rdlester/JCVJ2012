@@ -38,6 +38,14 @@ static class VanDamConsts {
   static final int CHAD_CARD5_Y = 443;
   static final int CHAD_CARD6_X = 127;
   static final int CHAD_CARD6_Y = 443;
+  
+  static final int LIGHT_X = ALEX_X;
+  static final int LIGHT_Y = 740;
+  static final int LIGHT_W = 95;
+  static final int LIGHT_H = 87;
+  static final String LIGHT_OFF = "images/UI/Light_Off.png";
+  static final String LIGHT_ON = "images/UI/Light_Green.png";
+  static final String LIGHT_RED = "images/UI/Light_Red.png";
 }
 
 static class AlexProb {
@@ -90,24 +98,57 @@ static class ChadProb {
  */
 class VanDamHand extends Hand {
   Card[] _alexHand;
+  boolean[] _alexPlayed;
   Card[] _chadHand;
+  boolean[] _chadPlayed;
   
   ArrayList<Card> _queue;
   
   PImage alexName = loadImage(VanDamConsts.ALEX_NAME);
   PImage chadName = loadImage(VanDamConsts.CHAD_NAME);
+  
+  PImage lightOff = loadImage(VanDamConsts.LIGHT_OFF);
+  PImage lightOn = loadImage(VanDamConsts.LIGHT_ON);
+  PImage lightRed = loadImage(VanDamConsts.LIGHT_RED);
+  
+  boolean _altPressed;
 
   VanDamHand() {
     super();
     initAlexHand();
     initChadHand();
+    _alexPlayed = new boolean[6];
+    Arrays.fill(_alexPlayed, false);
+    _chadPlayed = new boolean[6];
+    Arrays.fill(_chadPlayed, false);
     _queue = new ArrayList<Card>(VanDamConsts.QUEUE_SIZE);
+    _altPressed = false;
   }
   
   ArrayList<Card> getQueue() {
-    assert _queue != null: "VanDamHand: Gotta pick 6 cards before you can execute them";
     ArrayList<Card> temp = _queue;
     _queue = null;
+    
+    // draw new cards if played
+    if(_alexPlayed[0]) {
+      _alexHand[0] = alexDrawCard();
+    }
+    if(_alexPlayed[1]) {
+      _alexHand[1] = alexDrawCard();
+    }
+    if(_chadPlayed[0]) {
+      _chadHand[0] = chadDrawCard();
+    }
+    if(_chadPlayed[1]) {
+      _chadHand[1] = chadDrawCard();
+    }
+    if(_chadPlayed[2]) {
+      _chadHand[2] = chadDrawCard();
+    }
+    if(_chadPlayed[3]) {
+      _chadHand[3] = chadDrawCard();
+    }
+    
     return _queue;
   }
 
@@ -187,54 +228,86 @@ class VanDamHand extends Hand {
       popMatrix();
 
       popMatrix();
+      
+      // Draw Indicators
+      pushMatrix();
+      translate(VanDamConsts.LIGHT_X, VanDamConsts.LIGHT_Y);
+      for(int i = 1; i <= VanDamConsts.QUEUE_SIZE; i++) {
+        if(_queue.size() >= i) {
+          image(lightOn, 0, 0);
+        } else {
+          image(lightOff, 0, 0);
+        }
+        translate(VanDamConsts.LIGHT_W, 0);
+      }
+      popMatrix();
     }
   }
 
   void handleKeyMessage(KeyMessage m) {
     int key = m.getKeyCode();
-    if(key == DELETE) {
-      _queue.clear();
-    } else if(key == ENTER && _queue.size() == VanDamConsts.QUEUE_SIZE) {
-      setReady(true);
+    println(_queue.size());
+    println(VanDamConsts.QUEUE_SIZE);
+    if(key == POConstants.ALT) {
+      _altPressed = m.isPressed();
     }
-    else if(_queue.size() < VanDamConsts.QUEUE_SIZE) {
-      // Play card in Alex's hand
-      if (key == Q) {
-          _queue.add(_alexHand[0]);
+    else if(m.isPressed()) {
+      if(key == POConstants.DELETE) {
+      _queue.clear();
+      } else if(key == POConstants.ENTER && _queue.size() == VanDamConsts.QUEUE_SIZE) {
+        setReady(true);
       }
-      else if (key == W) {
-          _queue.add(_alexHand[1]);
-      } 
-      else if (key == A) {
-          _queue.add(_alexHand[2]);
-      }
-      else if (key == S) {
-          _queue.add(_alexHand[3]);
-      }  
-      else if (key == Z) {
-          _queue.add(_alexHand[4]);
-      }
-      else if (key == X) {
-          _queue.add(_alexHand[5]);
-      }
-      // Play card in Chad's hand
-      else if (key == E) {
-          _queue.add(_chadHand[0]);
-      } 
-      else if (key == R) {
-          _queue.add(_chadHand[1]);
-      }
-      else if (key == D) {
-          _queue.add(_chadHand[2]);
-      } 
-      else if (key == F) {
-          _queue.add(_chadHand[3]);
-      }   
-      else if (key == C) {
-          _queue.add(_chadHand[4]);
-      } 
-      else if (key == V) {
-          _queue.add(_chadHand[5]);
+      else if(_queue.size() < VanDamConsts.QUEUE_SIZE) {
+        // Play card in Alex's hand
+        if (key == POConstants.Q && !_alexPlayed[0]) {
+            _queue.add(_alexHand[0]);
+            _alexPlayed[0] = true;
+        }
+        else if (key == POConstants.W && !_alexPlayed[1]) {
+            _queue.add(_alexHand[1]);
+            _alexPlayed[1] = true;
+        } 
+        else if (key == POConstants.A && !_alexPlayed[2]) {
+            _queue.add(_alexHand[2]);
+            _alexPlayed[2] = true;
+        }
+        else if (key == POConstants.S && !_alexPlayed[3]) {
+            _queue.add(_alexHand[3]);
+            _alexPlayed[3] = true;
+        }  
+        else if (key == POConstants.Z && !_alexPlayed[4]) {
+            _queue.add(_alexHand[4]);
+            _alexPlayed[4] = true;
+        }
+        else if (key == POConstants.X && !_alexPlayed[5]) {
+            _queue.add(_alexHand[5]);
+            _alexPlayed[5] = true;
+        }
+        // Play card in Chad's hand
+        else if (key == POConstants.E && !_chadPlayed[0]) {
+            _queue.add(_chadHand[0]);
+            _chadPlayed[0] = true;
+        } 
+        else if (key == POConstants.R && !_chadPlayed[1]) {
+            _queue.add(_chadHand[1]);
+            _chadPlayed[1] = true;
+        }
+        else if (key == POConstants.D && !_chadPlayed[2]) {
+            _queue.add(_chadHand[2]);
+            _chadPlayed[2] = true;
+        } 
+        else if (key == POConstants.F && !_chadPlayed[3]) {
+            _queue.add(_chadHand[3]);
+            _chadPlayed[3] = true;
+        }   
+        else if (key == POConstants.C && !_chadPlayed[4]) {
+            _queue.add(_chadHand[4]);
+            _chadPlayed[4] = true;
+        } 
+        else if (key == POConstants.V && !_chadPlayed[5]) {
+            _queue.add(_chadHand[5]);
+            _chadPlayed[5] = true;
+        }
       }
     }
   }
@@ -377,12 +450,3 @@ class VanDamHand extends Hand {
     _chadHand[5] = new StrafeRightCard(Player.CHAD);
   }
 }
-
-
-
-
-<<<<<<< HEAD
-=======
-
-
->>>>>>> db58a4b5f9878ae35a35db114657cc09f64c9e20

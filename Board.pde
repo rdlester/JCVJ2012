@@ -1,15 +1,21 @@
 static class BoardConsts {
-  static final int BOARD_X = 100;
-  static final int BOARD_Y = 50;
-  static final int BOARD_W = 560;
-  static final int BOARD_H = 700;
+  static final String BACKGROUND = "images/Background.png";
+  
+  static final int BOARD_X = 542;
+  static final int BOARD_Y = 0;
+  static final int BOARD_W = WINDOW_WIDTH - BOARD_X;
+  static final int BOARD_H = WINDOW_HEIGHT;
 
   // Actual grid will be + 2, outer ring will be Indestructible tiles
+  static final int GRID_START_X = 56;
+  static final int GRID_START_Y = 80;
+  static final int GRID_START_W = BOARD_W - GRID_START_X*2;
+  static final int GRID_START_H = BOARD_H - GRID_START_Y*2;
   static final int GRID_W = 8;
   static final int GRID_H = 10;
 
-  static final int TILE_W = BOARD_W / GRID_W;
-  static final int TILE_H = BOARD_H / GRID_H;
+  static final int TILE_W = GRID_START_W / GRID_W;
+  static final int TILE_H = GRID_START_H / GRID_H;
 }
 
 /**
@@ -24,9 +30,12 @@ abstract class Board extends Being {
   Chad _chad;
 
   Card _playedCard;
+  
+  PImage _background;
 
   Board() {
     super(new Rectangle(BoardConsts.BOARD_X, BoardConsts.BOARD_Y, BoardConsts.BOARD_W, BoardConsts.BOARD_H));
+    _background = loadImage(BoardConsts.BACKGROUND);
     _alex = new Alex(this);
     _chad = new Chad(this);
     initBoard();
@@ -68,17 +77,6 @@ abstract class Board extends Being {
   }
 
   public void draw() {
-    
+    //image(_background, 0, 0);
   }
 }
-
-
-
-
-
-
-<<<<<<< HEAD
-=======
-
-
->>>>>>> db58a4b5f9878ae35a35db114657cc09f64c9e20

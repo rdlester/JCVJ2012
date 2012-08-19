@@ -7,6 +7,8 @@ static class GoonsConsts {
 class GoonsBoard extends Board {
   Character[] _goons; // Only Goons
   Character _currentGoon;
+  
+  PImage _background = loadImage("images/Background.png");
 
   GoonsBoard() {
     super();
@@ -75,7 +77,10 @@ class GoonsBoard extends Board {
   }
   
   void draw() {
+    image(_background, 0, 0);
+    
     // Make sure to skip outer ring
+    translate(BoardConsts.GRID_START_X, BoardConsts.GRID_START_Y);
     for (int i = 1; i <= BoardConsts.GRID_W; i++) { // row by row
       pushMatrix();
 
@@ -98,12 +103,3 @@ class GoonsBoard extends Board {
     }
   }
 }
-
-
-
-
-<<<<<<< HEAD
-=======
-
-
->>>>>>> db58a4b5f9878ae35a35db114657cc09f64c9e20
