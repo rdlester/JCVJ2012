@@ -4,6 +4,7 @@ static class VanDamConsts {
 
   static final int ALEX_X = 22;
   static final int ALEX_Y = 102;
+  static final String ALEX_NAME = "images/UI/Name_Alex.png";
   static final int ALEX_NAME_X = 63;
   static final int ALEX_NAME_Y = 0;
   static final int ALEX_CARD1_X = 0;
@@ -11,9 +12,9 @@ static class VanDamConsts {
   static final int ALEX_CARD2_X = 127;
   static final int ALEX_CARD2_Y = 47;
   static final int ALEX_CARD3_X = 0;
-  static final int ALEX_CARD3_Y = 260;
+  static final int ALEX_CARD3_Y = 247;
   static final int ALEX_CARD4_X = 127;
-  static final int ALEX_CARD4_Y = 260;
+  static final int ALEX_CARD4_Y = 247;
   static final int ALEX_CARD5_X = 0;
   static final int ALEX_CARD5_Y = 443;
   static final int ALEX_CARD6_X = 127;
@@ -21,6 +22,7 @@ static class VanDamConsts {
 
   static final int CHAD_X = 298;
   static final int CHAD_Y = 102;
+  static final String CHAD_NAME = "images/UI/Name_Chad.png";
   static final int CHAD_NAME_X = 40;
   static final int CHAD_NAME_Y = 0;
   static final int CHAD_CARD1_X = 0;
@@ -28,9 +30,9 @@ static class VanDamConsts {
   static final int CHAD_CARD2_X = 127;
   static final int CHAD_CARD2_Y = 47;
   static final int CHAD_CARD3_X = 0;
-  static final int CHAD_CARD3_Y = 234;
+  static final int CHAD_CARD3_Y = 247;
   static final int CHAD_CARD4_X = 127;
-  static final int CHAD_CARD4_Y = 234;
+  static final int CHAD_CARD4_Y = 247;
   static final int CHAD_CARD5_X = 0;
   static final int CHAD_CARD5_Y = 443;
   static final int CHAD_CARD6_X = 127;
@@ -89,8 +91,8 @@ class VanDamHand extends Hand {
   Card[] _alexHand;
   Card[] _chadHand;
   
-  PImage alexName = loadImage("images/UI/Name_Alex.png");
-  PImage chadName = loadImage("images/UI/Name_Chad.png");
+  PImage alexName = loadImage(VanDamConsts.ALEX_NAME);
+  PImage chadName = loadImage(VanDamConsts.CHAD_NAME);
 
   VanDamHand() {
     super();
@@ -330,22 +332,24 @@ class VanDamHand extends Hand {
 
   void initAlexHand() {
     _alexHand = new Card[VanDamConsts.ALEX_HAND_SIZE];
-    _alexHand[0] = new ForwardOneCard(Player.ALEX);
-    _alexHand[1] = new RotateLeftCard(Player.ALEX);
-    _alexHand[2] = new RotateRightCard(Player.ALEX);
+    _alexHand[0] = alexDrawCard();
+    _alexHand[1] = alexDrawCard();
+    _alexHand[2] = new ForwardOneCard(Player.ALEX);
     _alexHand[3] = new AttackCard(Player.ALEX);
-    _alexHand[4] = alexDrawCard();
-    _alexHand[5] = alexDrawCard();
+    _alexHand[4] = new RotateLeftCard(Player.ALEX);
+    _alexHand[5] = new RotateRightCard(Player.ALEX);
   }
 
   void initChadHand() {
     _chadHand = new Card[VanDamConsts.CHAD_HAND_SIZE];
-    _chadHand[0] = new StrafeLeftCard(Player.CHAD);
-    _chadHand[1] = new StrafeRightCard(Player.CHAD);
+    _chadHand[0] = chadDrawCard();
+    _chadHand[1] = chadDrawCard();
     _chadHand[2] = chadDrawCard();
     _chadHand[3] = chadDrawCard();
-    _chadHand[4] = chadDrawCard();
-    _chadHand[5] = chadDrawCard();
+    _chadHand[4] = new StrafeLeftCard(Player.CHAD);
+    _chadHand[5] = new StrafeRightCard(Player.CHAD);
   }
 }
+
+
 

@@ -115,5 +115,15 @@ abstract class Tile {
   }
 
   abstract void draw();
+  
+  void drawAnimation() {
+    
+  }
 }
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 171d6a95d7814220815bb6b14266067d9b11d5bc

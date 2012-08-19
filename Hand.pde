@@ -1,8 +1,8 @@
 static class HandConsts {
   static final int HAND_X = 0;
-  static final int HAND_Y = 600;
-  static final int HAND_W = 500;
-  static final int HAND_H = 200;
+  static final int HAND_Y = 0;
+  static final int HAND_W = 542;
+  static final int HAND_H = WINDOW_HEIGHT;
 }
 
 /**
@@ -22,5 +22,7 @@ class Hand extends Being {
     // Add your draw method here
   }
 }
+
+
 
 

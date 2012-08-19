@@ -83,6 +83,13 @@ class GoonsBoard extends Board {
     }
     
     // Draw Animations
+    getAlex().drawAnimation();
+    getChad().drawAnimation();
+    for (Character c : _goons) {
+      c.drawAnimation();
+    }
   }
 }
+
+
 
