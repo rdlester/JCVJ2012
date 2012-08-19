@@ -11,64 +11,81 @@ static class TileType {
 }
 
 static class Animations {
-  static final Animation GEN_DWN_Fwd = new Animation("GEN_DWN_Fwd", 1, 6, "png", 150);
+  static Animation GEN_DWN_Fwd = new Animation("data/images/GEN_DWN_Fwd", 1, 6, ".png", 150);
   static final int iGEN_DWN_Fwd = 1;
-  static final Animation GEN_DWN_Back = new Animation("GEN_DWN_Back", 1, 6, "png", 150);
+  static Animation GEN_DWN_Back = new Animation("data/images/GEN_DWN_Back", 1, 6, ".png", 150);
   static final int iGEN_DWN_Back = 2;
-  static final Animation GEN_DWN_Die = new Animation("GEN_DWN_Die", 1, 6, "png", 150);
+  static Animation GEN_DWN_Die = new Animation("data/images/GEN_DWN_Die", 1, 6, ".png", 150);
   static final int iGEN_DWN_Die = 3;
-  static final Animation GEN_DWN_Explode = new Animation("GEN_DWN_Explode", 1, 6, "png", 150);
+  static Animation GEN_DWN_Explode = new Animation("data/images/GEN_DWN_Explode", 1, 6, ".png", 150);
   static final int iGEN_DWN_Explode = 4;
-  static final Animation GEN_DWN_Melee = new Animation("GEN_DWN_Melee", 1, 6, "png", 150);
+  static Animation GEN_DWN_Melee = new Animation("data/images/GEN_DWN_Melee", 1, 6, ".png", 150);
   static final int iGEN_DWN_Melee = 5;
-  static final Animation GEN_DWN_Roundhouse = new Animation("GEN_DWN_Roundhouse", 1, 6, "png", 150);
+  static Animation GEN_DWN_Roundhouse = new Animation("data/images/GEN_DWN_Roundhouse", 1, 6, ".png", 150);
   static final int iGEN_DWN_Roundhouse = 6;
-  static final Animation GEN_DWN_StrafeRight = new Animation("GEN_DWN_StrafeLeft", 1, 6, "png", 150);
+  static Animation GEN_DWN_StrafeRight = new Animation("data/images/GEN_DWN_StrafeLeft", 1, 6, ".png", 150);
   static final int iGEN_DWN_StrafeRight = 7;
-  static final Animation GEN_DWN_StrafeLeft = new Animation("GEN_DWN_StrafeRight", 1, 6, "png", 150);
+  static Animation GEN_DWN_StrafeLeft = new Animation("data/images/GEN_DWN_StrafeRight", 1, 6, ".png", 150);
   static final int iGEN_DWN_StrafeLeft = 8;
-  static final Animation GEN_DWN_TurnLeft = new Animation("GEN_DWN_TurnLeft", 1, 6, "png", 150);
+  static Animation GEN_DWN_TurnLeft = new Animation("data/images/GEN_DWN_TurnLeft", 1, 6, ".png", 150);
   static final int iGEN_DWN_TurnLeft = 9;
-  static final Animation GEN_DWN_TurnRight = new Animation("GEN_DWN_TurnRight", 1, 6, "png", 150);
+  static Animation GEN_DWN_TurnRight = new Animation("data/images/GEN_DWN_TurnRight", 1, 6, ".png", 150);
   static final int iGEN_DWN_TurnRight = 10;
-  
-  static final Animation ALEX_DOWN_Fire = new Animation("ALEX_DOWN_Fire", 1, 2, "png", 150);
-  static final int iALEX_DOWN_Fire = 11;
-  static final Animation ALEX_SIDE_Fire = new Animation("ALEX_SIDE_Fire", 1, 2, "png", 150);
+
+  static Animation ALEX_DWN_Fire = new Animation("data/images/ALEX_DOWN_Fire", 1, 2, ".png", 150);
+  static final int iALEX_DWN_Fire = 11;
+  static Animation ALEX_SIDE_Fire = new Animation("data/images/ALEX_SIDE_Fire", 1, 2, ".png", 150);
   static final int iALEX_SIDE_Fire = 12;
-  static final Animation ALEX_UP_Fire = new Animation("ALEX_UP_Fire", 1, 2, "png", 150);
+  static Animation ALEX_UP_Fire = new Animation("data/images/ALEX_UP_Fire", 1, 2, ".png", 150);
   static final int iALEX_UP_Fire = 13;
-  
-  static final Animation CHAD_DOWN_Fire = new Animation("CHAD_DOWN_Fire", 1, 2, "png", 150);
-  static final int iCHAD_DOWN_Fire = 14;
-  static final Animation CHAD_SIDE_Fire = new Animation("CHAD_SIDE_Fire", 1, 2, "png", 150);
+
+
+  static Animation CHAD_DWN_Fire = new Animation("data/images/CHAD_DOWN_Fire", 1, 2, ".png", 150);
+  static final int iCHAD_DWN_Fire = 14;
+  static Animation CHAD_SIDE_Fire = new Animation("data/images/CHAD_SIDE_Fire", 1, 2, ".png", 150);
   static final int iCHAD_SIDE_Fire = 15;
-  static final Animation CHAD_UP_Fire = new Animation("CHAD_UP_Fire", 1, 2, "png", 150);
+  static Animation CHAD_UP_Fire = new Animation("data/images/CHAD_UP_Fire", 1, 2, ".png", 150);
   static final int iCHAD_UP_Fire = 16;
-  
-  static final Animation EMYGUN_DOWN_Fire = new Animation("EMYGUN_DOWN_Fire", 1, 2, "png", 150);
+
+
+  static Animation EMYGUN_DOWN_Fire = new Animation("data/images/EMYGUN_DOWN_Fire", 1, 2, ".png", 150);
   static final int iEMYGUN_DOWN_Fire = 17;
-  static final Animation EMYGUN_SIDE_Fire = new Animation("EMYGUN_SIDE_Fire", 1, 2, "png", 150);
+  static Animation EMYGUN_SIDE_Fire = new Animation("data/images/EMYGUN_SIDE_Fire", 1, 2, ".png", 150);
   static final int iEMYGUN_SIDE_Fire = 18;
-  static final Animation EMYGUN_UP_Fire = new Animation("EMYGUN_UP_Fire", 1, 2, "png", 150);
+  static Animation EMYGUN_UP_Fire = new Animation("data/images/EMYGUN_UP_Fire", 1, 2, ".png", 150);
   static final int iEMYGUN_UP_Fire = 19;
-  
-  static final Animation EMY_DOWN_Die = new Animation("EMY_DOWN_Die", 1, 6, "png", 150);
-  static final int iEMY_DOWN_DIE = 20;
-  
-  static final Animation CrateBreak = new Animation("CrateBreak", 1, 6, "png", 150);
+
+
+  static Animation EMY_DWN_Die = new Animation("data/images/EMY_DOWN_Die", 1, 6, ".png", 150);
+  static final int iEMY_DWN_DIE = 20;
+
+  static Animation CrateBreak = new Animation("data/images/CrateBreak", 1, 6, ".png", 150);
   static final int iCrateBreak = 21;
-  
-  static final Animation BarrelExplode = new Animation("BarrelExplode", 1, 6, "png", 150);
+
+  static Animation BarrelExplode = new Animation("data/images/BarrelExplode", 1, 6, ".png", 150);
   static final int iBarrelExplode = 22;
-  
-  static final Animation Crate = new Animation("Crate", 1, 6, "png", 150);
+
+  static Animation Crate = new Animation("data/images/Crate", 1, 1, ".png", 150);
   static final int iCrate = 23;
-  
-  static final Animation Barrel = new Animation("Barrel", 1, 1, "png", 150);
+
+  static Animation Barrel = new Animation("data/images/Barrel", 1, 1, ".png", 150);
   static final int iBarrel = 24;
 }
-  
+
+//The Gun animations repeat thrice.
+void animSetup() {
+  Animations.ALEX_DOWN_Fire.setNumberOfTimesToPlay(3);
+  Animations.ALEX_SIDE_Fire.setNumberOfTimesToPlay(3);
+  Animations.ALEX_UP_Fire.setNumberOfTimesToPlay(3);
+  Animations.CHAD_DOWN_Fire.setNumberOfTimesToPlay(3);
+  Animations.CHAD_SIDE_Fire.setNumberOfTimesToPlay(3);
+  Animations.CHAD_UP_Fire.setNumberOfTimesToPlay(3);
+  Animations.EMYGUN_DOWN_Fire.setNumberOfTimesToPlay(3);
+  Animations.EMYGUN_SIDE_Fire.setNumberOfTimesToPlay(3);
+  Animations.EMYGUN_UP_Fire.setNumberOfTimesToPlay(3);
+}
+
+
 
 /**
  * Tile on the board
@@ -76,20 +93,27 @@ static class Animations {
 abstract class Tile {
   int _type;
   int _hp;
+  boolean _animate = false;
+  AnimatedSprite _sprite = new AnimatedSprite();
 
   Tile(int type) {
     _type = type;
+    
   }
-  
+
   int getType() {
     return _type;
   }
-  
+
   void applyHit(int power) {
     _hp-=power;
   }
 
+  void drawAnimation() {
+    _sprite.animate();
+    _animate = false;
+  }
+
   abstract void draw();
 }
-
 

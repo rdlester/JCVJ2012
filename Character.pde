@@ -40,6 +40,8 @@ abstract class Character extends Tile {
                   _board.set (_x,_y,next);
                   _y-=1;
                   _board.set (_x,_y,this);
+                  _animate = true;
+                  _sprite.setActiveAnimation(Animations.iGEN_DWN_Fwd);
                   break;
                 case TileType.BARREL:
                 case TileType.CRATE:

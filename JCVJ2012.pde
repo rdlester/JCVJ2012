@@ -31,6 +31,8 @@ World currentWorld;
 void setup() {
   size(WINDOW_WIDTH, WINDOW_HEIGHT);
   Hermes.setPApplet(this);
+  
+  animSetup();
 
   currentWorld = new LevelPvPGoons();
 
