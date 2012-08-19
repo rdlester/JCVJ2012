@@ -1,26 +1,42 @@
 static class VanDamConsts {
   static final int ALEX_HAND_SIZE = 6;
   static final int CHAD_HAND_SIZE = 6;
-  
-  static final int ALEX_X = 50;
-  static final int ALEX_Y = 50;
-  static final int ALEX_NAME_X = 20;
-  static final int ALEX_NAME_Y = 20;
-  static final int ALEX_CARD1_X = 10;
-  static final int ALEX_CARD1_Y = 10;
-  static final int ALEX_CARD2_X = 10;
-  static final int ALEX_CARD2_Y = 10;
-  static final int ALEX_CARD3_X = 10;
-  static final int ALEX_CARD3_Y = 10;
-  static final int ALEX_CARD4_X = 10;
-  static final int ALEX_CARD4_Y = 10;
-  static final int ALEX_CARD5_X = 10;
-  static final int ALEX_CARD5_Y = 10;
-  static final int ALEX_CARD6_X = 10;
-  static final int ALEX_CARD6_Y = 10;
-  
-  static final int CHAD_X = 50;
-  static final int CHAD_Y = 50;
+
+  static final int ALEX_X = 22;
+  static final int ALEX_Y = 102;
+  static final PImage ALEX_NAME = loadImage("images/UI/Name_Alex.png");
+  static final int ALEX_NAME_X = 63;
+  static final int ALEX_NAME_Y = 0;
+  static final int ALEX_CARD1_X = 0;
+  static final int ALEX_CARD1_Y = 47;
+  static final int ALEX_CARD2_X = 127;
+  static final int ALEX_CARD2_Y = 47;
+  static final int ALEX_CARD3_X = 0;
+  static final int ALEX_CARD3_Y = 260;
+  static final int ALEX_CARD4_X = 127;
+  static final int ALEX_CARD4_Y = 260;
+  static final int ALEX_CARD5_X = 0;
+  static final int ALEX_CARD5_Y = 443;
+  static final int ALEX_CARD6_X = 127;
+  static final int ALEX_CARD6_Y = 443;
+
+  static final int CHAD_X = 298;
+  static final int CHAD_Y = 102;
+  static final PImage CHAD_NAME = loadImage("images/UI/Name_Chad.png");
+  static final int CHAD_NAME_X = 40;
+  static final int CHAD_NAME_Y = 0;
+  static final int CHAD_CARD1_X = 0;
+  static final int CHAD_CARD1_Y = 47;
+  static final int CHAD_CARD2_X = 127;
+  static final int CHAD_CARD2_Y = 47;
+  static final int CHAD_CARD3_X = 0;
+  static final int CHAD_CARD3_Y = 234;
+  static final int CHAD_CARD4_X = 127;
+  static final int CHAD_CARD4_Y = 234;
+  static final int CHAD_CARD5_X = 0;
+  static final int CHAD_CARD5_Y = 443;
+  static final int CHAD_CARD6_X = 127;
+  static final int CHAD_CARD6_Y = 443;
 }
 
 static class AlexProb {
@@ -74,13 +90,13 @@ static class ChadProb {
 class VanDamHand extends Hand {
   Card[] _alexHand;
   Card[] _chadHand;
-  
+
   VanDamHand() {
     super();
     initAlexHand();
     initChadHand();
   }
-  
+
   void update() {
     super.update();
   }
@@ -90,29 +106,113 @@ class VanDamHand extends Hand {
     pushMatrix();
     translate(VanDamConsts.ALEX_X, VanDamConsts.ALEX_Y);
     // Draw Title
+    pushMatrix();
     translate(VanDamConsts.ALEX_NAME_X, VanDamConsts.ALEX_NAME_Y);
-    // TODO: title
-    
-    // Draw cards
-    
+    image(VanDamConsts.ALEX_NAME, 0, 0);
     popMatrix();
-    
+
+    // Draw cards
+    pushMatrix();
+    translate(VanDamConsts.ALEX_CARD1_X, VanDamConsts.ALEX_CARD1_Y);
+    _alexHand[0].draw();
+    popMatrix();
+    pushMatrix();
+    translate(VanDamConsts.ALEX_CARD2_X, VanDamConsts.ALEX_CARD2_Y);
+    _alexHand[1].draw();
+    popMatrix();
+    pushMatrix();
+    translate(VanDamConsts.ALEX_CARD3_X, VanDamConsts.ALEX_CARD3_Y);
+    _alexHand[2].draw();
+    popMatrix();
+    pushMatrix();
+    translate(VanDamConsts.ALEX_CARD4_X, VanDamConsts.ALEX_CARD4_Y);
+    _alexHand[3].draw();
+    popMatrix();
+    pushMatrix();
+    translate(VanDamConsts.ALEX_CARD5_X, VanDamConsts.ALEX_CARD5_Y);
+    _alexHand[4].draw();
+    popMatrix();
+    pushMatrix();
+    translate(VanDamConsts.ALEX_CARD6_X, VanDamConsts.ALEX_CARD6_Y);
+    _alexHand[5].draw();
+    popMatrix();
+
+    popMatrix();
+
     // Translate to Chad's Hand
     pushMatrix();
+    translate(VanDamConsts.CHAD_X, VanDamConsts.CHAD_Y);
+
     // Draw Title
+    pushMatrix();
+    translate(VanDamConsts.CHAD_NAME_X, VanDamConsts.CHAD_NAME_Y);
+    image(VanDamConsts.CHAD_NAME, 0, 0);
+    popMatrix();
+
     // Draw cards
-    
+    pushMatrix();
+    translate(VanDamConsts.CHAD_CARD1_X, VanDamConsts.CHAD_CARD1_Y);
+    _chadHand[0].draw();
+    popMatrix();
+    pushMatrix();
+    translate(VanDamConsts.CHAD_CARD2_X, VanDamConsts.CHAD_CARD2_Y);
+    _chadHand[1].draw();
+    popMatrix();
+    pushMatrix();
+    translate(VanDamConsts.CHAD_CARD3_X, VanDamConsts.CHAD_CARD3_Y);
+    _chadHand[2].draw();
+    popMatrix();
+    pushMatrix();
+    translate(VanDamConsts.CHAD_CARD4_X, VanDamConsts.CHAD_CARD4_Y);
+    _chadHand[3].draw();
+    popMatrix();
+    pushMatrix();
+    translate(VanDamConsts.CHAD_CARD5_X, VanDamConsts.CHAD_CARD5_Y);
+    _chadHand[4].draw();
+    popMatrix();
+    pushMatrix();
+    translate(VanDamConsts.CHAD_CARD6_X, VanDamConsts.CHAD_CARD6_Y);
+    _chadHand[5].draw();
+    popMatrix();
+
     popMatrix();
   }
-  
+
   void handleKeyMessage(KeyMessage m) {
+    int key = m.getKeyCode();
     
+    // Play card in Alex's hand
+    if (key == Q) {
+    }
+    else if (key == W) {
+    } 
+    else if (key == A) {
+    }
+    else if (key == S) {
+    }  
+    else if (key == Z) {
+    }
+    else if (key == X) {
+    }
+    // Play card in Chad's hand
+    else if (key == E) {
+    } 
+    else if (key == R) {
+    }  
+    else if (key == D) {
+    } 
+    else if (key == F) {
+    }   
+    else if (key == C) {
+    } 
+    else if (key == V) {
+    }
   }
-  
+
   void handleMouseMessage(MouseMessage m) {
-    
+    // TODO
   }
-  
+
   public Card alexDrawCard() {
     int card = floor(random(AlexProb.KICK));
     Card next = null;
@@ -169,7 +269,7 @@ class VanDamHand extends Hand {
     }
     return next;
   }
-  
+
   Card chadDrawCard() {
     int card = floor(random(ChadProb.KICK));
     Card next = null;
@@ -226,7 +326,7 @@ class VanDamHand extends Hand {
     }
     return next;
   }
-  
+
   void initAlexHand() {
     _alexHand = new Card[VanDamConsts.ALEX_HAND_SIZE];
     _alexHand[0] = new ForwardOneCard(Player.ALEX);
@@ -236,7 +336,7 @@ class VanDamHand extends Hand {
     _alexHand[4] = alexDrawCard();
     _alexHand[5] = alexDrawCard();
   }
-  
+
   void initChadHand() {
     _chadHand = new Card[VanDamConsts.CHAD_HAND_SIZE];
     _chadHand[0] = new StrafeLeftCard(Player.CHAD);
@@ -247,5 +347,4 @@ class VanDamHand extends Hand {
     _chadHand[5] = chadDrawCard();
   }
 }
-
 

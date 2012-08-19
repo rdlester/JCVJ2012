@@ -18,9 +18,9 @@ class LevelPvPGoons extends Level {
     register(new VanDamHand());
     register(new GunGoonHand());
     register(new KungFuGoonHand());
-    
+
     // Interactions between TurnController and objects
-    
+
     // Subscriptions
     // Alex's hand
     subscribe(vanDamHand, Q);
@@ -29,7 +29,7 @@ class LevelPvPGoons extends Level {
     subscribe(vanDamHand, S);
     subscribe(vanDamHand, Z);
     subscribe(vanDamHand, X);
-    
+
     // Chad's hand
     subscribe(vanDamHand, E);
     subscribe(vanDamHand, R);
@@ -37,7 +37,7 @@ class LevelPvPGoons extends Level {
     subscribe(vanDamHand, F);
     subscribe(vanDamHand, C);
     subscribe(vanDamHand, V);
-    
+
     // Gun Goon's hand
     subscribe(gunGoonHand, Q);
     subscribe(gunGoonHand, W);
@@ -46,7 +46,7 @@ class LevelPvPGoons extends Level {
     subscribe(gunGoonHand, A);
     subscribe(gunGoonHand, S);
     subscribe(gunGoonHand, D);
-    
+
     // Kung Fu Goon's  hand
     subscribe(kungFuGoonHand, Q);
     subscribe(kungFuGoonHand, W);
@@ -55,6 +55,5 @@ class LevelPvPGoons extends Level {
     subscribe(kungFuGoonHand, S);
   }
 }
-
 
 
