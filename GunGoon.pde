@@ -6,3 +6,4 @@ class GunGoon extends FiringCharacter {
     super(TileType.GUN_GOON, board);
   }
 }
+

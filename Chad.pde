@@ -15,3 +15,4 @@ class Chad extends FiringCharacter {
   }
 }
 
+
