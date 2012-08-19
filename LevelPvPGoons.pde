@@ -7,8 +7,9 @@ class LevelPvPGoons extends Level {
   LevelPvPGoons() {
     super();
   }
-  
+
   void setup() {
     super.setup();
   }
 }
+

@@ -6,8 +6,9 @@ class LevelPvC extends Level {
   LevelPvC() {
     super();
   }
-  
+
   void setup() {
     super.setup();
   }
 }
+

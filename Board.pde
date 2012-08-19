@@ -3,10 +3,10 @@ static class BoardConsts {
   static final int BOARD_Y = 50;
   static final int BOARD_W = 560;
   static final int BOARD_H = 700;
-  
+
   static final int GRID_W = 8;
   static final int GRID_H = 10;
-  
+
   static final int TILE_W = BOARD_W / GRID_W;
   static final int TILE_H = BOARD_H / GRID_H;
 }
@@ -26,8 +26,8 @@ abstract class Board extends Being {
 
   Board() {
     super(new Rectangle(BoardConsts.BOARD_X, BoardConsts.BOARD_Y, BoardConsts.BOARD_W, BoardConsts.BOARD_H));
-    _alex = new Alex();
-    _chad = new Chad();
+    _alex = new Alex(this);
+    _chad = new Chad(this);
     initBoard();
     _playedCard = null;
   }
@@ -39,6 +39,13 @@ abstract class Board extends Being {
     return _grid[i][j];
   }
 
+  // Returns tile that was replaced
+  Tile set(int i, int j, Tile t) {
+    Tile replaced = _grid[i][j];
+    _grid[i][j] = t;
+    return replaced;
+  }
+
   Alex getAlex() {
     return _alex;
   }
@@ -46,7 +53,7 @@ abstract class Board extends Being {
   Chad getChad() {
     return _chad;
   }
-  
+
   public nextCard(Card c) {
     _playedCard = c;
   }
@@ -57,28 +64,29 @@ abstract class Board extends Being {
       playCard(_playedCard.getPlayer());
     }
   }
-  
+
   public void playCard(int player) {
     if (player == Player.ALEX) {
-        _playedCard.execute(getAlex());
-        _playedCard == null;
-      } else if (player == Player.CHAD) {
-        _playedCard.execute(getChad());
-        _playedCard == null;
-      }
+      _playedCard.execute(getAlex());
+      _playedCard == null;
+    } 
+    else if (player == Player.CHAD) {
+      _playedCard.execute(getChad());
+      _playedCard == null;
+    }
   }
 
   public void draw() {
-    for(int i = 0; i < BoardConsts.GRID_W; i++) { // row by row
+    for (int i = 0; i < BoardConsts.GRID_W; i++) { // row by row
       pushMatrix();
-      
-      for(int j = 0; j < BoardConsts.GRID_H; j++) { // iterate down the columns
+
+      for (int j = 0; j < BoardConsts.GRID_H; j++) { // iterate down the columns
         pushStyle();
-        get(i,j).draw();
+        get(i, j).draw();
         popStyle();
         translate(0, BoardConsts.TILE_H);
       }
-      
+
       popMatrix();
       translate(BoardConsts.TILE_W, 0);
     }

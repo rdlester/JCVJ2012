@@ -4,14 +4,14 @@
  */
 class Chad extends FiringCharacter {
   Chad() {
-    
-    void moveForward2()
-    {
-    }
-    
+    super(TileType.CHAD);
   }
-  
+
+  void moveForward2()
+  {
+  }
+
   void draw() {
-    
   }
 }
+

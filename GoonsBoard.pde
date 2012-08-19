@@ -6,17 +6,18 @@ static class GoonsConsts {
 
 class GoonsBoard extends Board {
   ArrayList<Character> _goons; // Only Goons
-  int _currentGoon;
-  
+  Character _currentGoon;
+
   GoonsBoard() {
     super();
+    _currentGoon = null;
   }
-  
+
   void initBoard() {
-    for(int i = 0; i < GoonsConsts.KUNG_FU_NUM; i++) {
+    for (int i = 0; i < GoonsConsts.KUNG_FU_NUM; i++) {
       _goons.add(new KungFuGoon());
     }
-    for(int i = 0; i < GoonsConsts.GUN_NUM; i++) {
+    for (int i = 0; i < GoonsConsts.GUN_NUM; i++) {
       _goons.add(new GunGoon());
     }
     for (int i = 0; i < BoardConsts.GRID_W; i++) {
@@ -25,15 +26,18 @@ class GoonsBoard extends Board {
       }
     }
   }
-  
+
   void playCard(int player) {
     super.playCard(player);
-    if(player == Player.GOON) {
+    if (player == Player.GOON) {
       _playedCard.execute(_currentGoon);
     }
   }
-  
+
   Character pickGoon() {
-    floor(random(GoonsConsts.NUM));
+    int picked = floor(random(GoonsConsts.NUM));
+    _currentGoon = _goons.get(picked);
+    return _currentGoon;
   }
 }
+

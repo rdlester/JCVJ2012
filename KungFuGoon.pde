@@ -3,11 +3,11 @@
  */
 class KungFuGoon extends Character {
   KungFuGoon() {
-    super();
-    
-    void moveForward2()
-    {
-    }
+    super(TileType.GUN_GOON);
+  }
+
+  void moveForward2()
+  {
   }
 }
 

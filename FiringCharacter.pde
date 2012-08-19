@@ -1,18 +1,18 @@
 class FiringCharacter extends Character {
-  FiringCharacter() {
-    
-    void actionFire()
-    {
-    }
-    
-    void moveStrafeLeft()
-    {
-    }
-    
-    void moveStrafeRight()
-    {
-    }
-    
+  FiringCharacter(int type) {
+    super(type);
   }
-  
+
+  void actionFire()
+  {
+  }
+
+  void moveStrafeLeft()
+  {
+  }
+
+  void moveStrafeRight()
+  {
+  }
 }
+

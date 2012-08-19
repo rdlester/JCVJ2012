@@ -13,14 +13,14 @@ class TurnController extends HObject {
   VanDamHand _vamDamHand;
   ArrayList<Hand> _evilHands;
   int _state;
-  
+
   TurnController(Board board, VanDamHand vanDamHand) {
     _board = board;
     _vanDamHand = vanDamHand;
     _state = TurnState.VAN_DAM;
   }
-  
+
   void nextTurn() {
-    
   }
 }
+

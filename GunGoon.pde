@@ -3,6 +3,6 @@
  */
 class GunGoon extends FiringCharacter {
   GunGoon() {
-    super();
+    super(TileType.GUN_GOON);
   }
 }

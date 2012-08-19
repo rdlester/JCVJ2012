@@ -10,12 +10,13 @@ class VanDamHand extends Hand {
   PlayerHand() {
     super(new Rectangle(HandConsts.HAND_X, HandConsts.HAND_Y, HandConsts.HAND_W, HandConsts.HAND_H));
   }
-  
+
   void update() {
     super.update();
   }
-  
+
   void draw() {
     super.draw();
   }
 }
+
