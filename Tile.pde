@@ -70,6 +70,71 @@ static class Animations {
 
   static Animation Barrel = new Animation("data/images/Barrel", 1, 1, ".png", 150);
   static final int iBarrel = 24;
+  
+  static Animation ALEX_LEFT_Fire = new Animation("data/images/L-", 1, 2, ".png", 150);
+  static final int iALEX_LEFT_Fire = 25;
+  static Animation CHAD_LEFT_Fire = new Animation("data/images/L-", 3, 4, ".png", 150);
+  static final int iCHAD_LEFT_Fire = 26;
+  static Animation EMYGUN_LEFT_Fire = new Animation("data/images/L-", 6, 7, ".png", 150);
+  static final int iALEX_LEFT_Fire = 27;
+  
+  static Animation ALEX_LEFT_Idle = new Animation("data/images/L-", 0, 0, ".png", 150);
+  static final int iALEX_LEFT_Idle = 28;
+  static Animation ALEX_RIGHT_Idle = new Animation("data/images/ALEX_SIDE", 1, 1, ".png", 150);
+  static final int iALEX_RIGHT_Idle = 29;
+  static Animation ALEX_DOWN_Idle = new Animation("data/images/ALEX_DWN_Idle", 1, 1, ".png", 150);
+  static final int iALEX_DOWN_Idle = 30;
+  static Animation ALEX_UP_Idle = new Animation("data/images/ALEX_UP_Idle", 1, 1, ".png", 150);
+  static final int iALEX_UP_Idle = 31;
+  
+  static Animation CHAD_LEFT_Idle = new Animation("data/images/L-", 5, 5, ".png", 150);
+  static final int iCHAD_LEFT_Idle = 32;
+  static Animation CHAD_RIGHT_Idle = new Animation("data/images/CHAD_SIDE_Idle", 1, 1, ".png", 150);
+  static final int iCHAD_RIGHT_Idle = 33;
+  static Animation CHAD_DOWN_Idle = new Animation("data/images/CHAD_DWN_Idle", 1, 1, ".png", 150);
+  static final int iCHAD_DOWN_Idle = 34;
+  static Animation CHAD_UP_Idle = new Animation("data/images/CHAD_UP_Idle", 1, 1, ".png", 150);
+  static final int iCHAD_UP_Idle = 35;
+  
+  static Animation EMYGUN_LEFT_Idle = new Animation("data/images/L-", 8, 8, ".png", 150);
+  static final int iEMYGUN_LEFT_Idle = 36;
+  static Animation EMYGUN_RIGHT_Idle = new Animation("data/images/EMYGUN_SIDE_Idle", 1, 1, ".png", 150);
+  static final int iEMYGUN_RIGHT_Idle = 37;
+  static Animation EMYGUN_DOWN_Idle = new Animation("data/images/EMYGUN_DWN_Idle", 1, 1, ".png", 150);
+  static final int iEMYGUN_DOWN_Idle = 38;
+  static Animation EMYGUN_UP_Idle = new Animation("data/images/EMYGUN_UP_Idle", 1, 1, ".png", 150);
+  static final int iEMYGUN_UP_Idle = 39;
+  
+  static Animation EMYMEL_LEFT_Idle = new Animation("data/images/L-", 8, 8, ".png", 150);
+  static final int iEMYMEL_LEFT_Idle = 40;
+  static Animation EMYMEL_RIGHT_Idle = new Animation("data/images/EMYMEL_SIDE_Idle", 1, 1, ".png", 150);
+  static final int iEMYMEL_RIGHT_Idle = 41;
+  static Animation EMYMEL_DOWN_Idle = new Animation("data/images/EMYMEL_DWN_Idle", 1, 1, ".png", 150);
+  static final int iEMYMEL_DOWN_Idle = 42;
+  static Animation EMYMEL_UP_Idle = new Animation("data/images/EMYMEL_UP_Idle", 1, 1, ".png", 150);
+  static final int iEMYMEL_UP_Idle = 43;
+  
+  static Animation GEN_UP_Fwd = new Animation("data/images/GEN_UP_Fwd", 1, 6, ".png", 150);
+  static final int iGEN_UP_Fwd = 44;
+  static Animation GEN_UP_Back = new Animation("data/images/GEN_UP_Back", 1, 5, ".png", 150);
+  static final int iGEN_UP_Back = 45;
+  static Animation GEN_UP_Die = new Animation("data/images/GEN_UP_Die", 1, 6, ".png", 150);
+  static final int iGEN_UP_Die = 46;
+  static Animation GEN_UP_Explode = new Animation("data/images/GEN_UP_Explode", 1, 6, ".png", 150);
+  static final int iGEN_UP_Explode = 47;
+  static Animation GEN_UP_Melee = new Animation("data/images/GEN_UP_Melee", 1, 6, ".png", 150);
+  static final int iGEN_UP_Melee = 48;
+  static Animation GEN_UP_Roundhouse = new Animation("data/images/GEN_UP_Roundhouse", 1, 6, ".png", 150);
+  static final int iGEN_UP_Roundhouse = 49;
+  static Animation GEN_UP_StrafeRight = new Animation("data/images/GEN_UP_StrafeLeft", 1, 6, ".png", 150);
+  static final int iGEN_UP_StrafeRight = 50;
+  static Animation GEN_UP_StrafeLeft = new Animation("data/images/GEN_UP_StrafeRight", 1, 6, ".png", 150);
+  static final int iGEN_UP_StrafeLeft = 51;
+  static Animation GEN_UP_TurnLeft = new Animation("data/images/GEN_UP_TurnLeft", 1, 6, ".png", 150);
+  static final int iGEN_UP_TurnLeft = 52;
+  static Animation GEN_UP_TurnRight = new Animation("data/images/GEN_UP_TurnRight", 1, 6, ".png", 150);
+  static final int iGEN_UP_TurnRight = 53;
+  
 }
 
 //The Gun animations repeat thrice.
@@ -77,12 +142,15 @@ void animSetup() {
   Animations.ALEX_DWN_Fire.setNumberOfTimesToPlay(3);
   Animations.ALEX_SIDE_Fire.setNumberOfTimesToPlay(3);
   Animations.ALEX_UP_Fire.setNumberOfTimesToPlay(3);
+  Animations.ALEX_LEFT_Fire.setNumberOfTimesToPlay(3);
   Animations.CHAD_DWN_Fire.setNumberOfTimesToPlay(3);
   Animations.CHAD_SIDE_Fire.setNumberOfTimesToPlay(3);
   Animations.CHAD_UP_Fire.setNumberOfTimesToPlay(3);
+  Animations.CHAD_LEFT_Fire.setNumberOfTimesToPlay(3);
   Animations.EMYGUN_DWN_Fire.setNumberOfTimesToPlay(3);
   Animations.EMYGUN_SIDE_Fire.setNumberOfTimesToPlay(3);
   Animations.EMYGUN_UP_Fire.setNumberOfTimesToPlay(3);
+  Animations.EMYGUN_LEFT_Fire.setNumberOfTimesToPlay(3);
 }
 
 
@@ -124,7 +192,31 @@ abstract class Tile {
     _sprite.addAnimation(Animations.BarrelExplode);
     _sprite.addAnimation(Animations.Crate);
     _sprite.addAnimation(Animations.Barrel);
-    //Add more
+    _sprite.addAnimation(Animations.ALEX_LEFT_Fire);
+    _sprite.addAnimation(Animations.CHAD_LEFT_Fire);
+    _sprite.addAnimation(Animations.EMYGUN_LEFT_Fire);
+    _sprite.addAnimation(Animations.ALEX_LEFT_Idle);
+    _sprite.addAnimation(Animations.ALEX_RIGHT_Idle);
+    _sprite.addAnimation(Animations.ALEX_DOWN_Idle);
+    _sprite.addAnimation(Animations.ALEX_UP_Idle);
+    _sprite.addAnimation(Animations.CHAD_LEFT_Idle);
+    _sprite.addAnimation(Animations.CHAD_RIGHT_Idle);
+    _sprite.addAnimation(Animations.CHAD_DOWN_Idle);
+    _sprite.addAnimation(Animations.CHAD_UP_Idle);
+    _sprite.addAnimation(Animations.EMYGUN_LEFT_Idle);
+    _sprite.addAnimation(Animations.EMYGUN_RIGHT_Idle);
+    _sprite.addAnimation(Animations.EMYGUN_DOWN_Idle);
+    _sprite.addAnimation(Animations.EMYGUN_UP_Idle);
+    _sprite.addAnimation(Animations.GEN_UP_Fwd);
+    _sprite.addAnimation(Animations.GEN_UP_Back);
+    _sprite.addAnimation(Animations.GEN_UP_Die);
+    _sprite.addAnimation(Animations.GEN_UP_Explode);
+    _sprite.addAnimation(Animations.GEN_UP_Melee);
+    _sprite.addAnimation(Animations.GEN_UP_Roundhouse);
+    _sprite.addAnimation(Animations.GEN_UP_StrafeRight);
+    _sprite.addAnimation(Animations.GEN_UP_StrafeLeft);
+    _sprite.addAnimation(Animations.GEN_UP_TurnLeft);
+    _sprite.addAnimation(Animations.GEN_UP_TurnRight);
     
   }
 
