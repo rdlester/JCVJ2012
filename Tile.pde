@@ -116,6 +116,14 @@ abstract class Tile {
     _sprite.addAnimation(Animations.CHAD_DWN_Fire);
     _sprite.addAnimation(Animations.CHAD_SIDE_Fire);
     _sprite.addAnimation(Animations.CHAD_UP_Fire);
+    _sprite.addAnimation(Animations.EMYGUN_DWN_Fire);
+    _sprite.addAnimation(Animations.EMYGUN_SIDE_Fire);
+    _sprite.addAnimation(Animations.EMYGUN_UP_Fire);
+    _sprite.addAnimation(Animations.EMY_DWN_Die);
+    _sprite.addAnimation(Animations.CrateBreak);
+    _sprite.addAnimation(Animations.BarrelExplode);
+    _sprite.addAnimation(Animations.Crate);
+    _sprite.addAnimation(Animations.Barrel);
     //Add more
     
   }
@@ -135,3 +143,4 @@ abstract class Tile {
 
   abstract void draw();
 }
+

@@ -431,3 +431,4 @@ abstract class VanDammes extends FiringCharacter {
 }
 
 
+

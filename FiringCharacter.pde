@@ -5,14 +5,15 @@ abstract class FiringCharacter extends Character {
 
   void actionFire()
   {
-    Tile current;
+    Tile current, origin;
     boolean stopIt = false;
     switch (_orientation){
       
       case Orientation.N:
         _y-=1;
         for (int distance = BoardConsts.GRID_H - _y; distance > 0; distance--){
-          current = _board.get(_x,_y);
+          origin = _board.get(_x,_y);
+          current = origin;
           switch (current.getType()){
             
             case TileType.BLANK:
@@ -25,6 +26,22 @@ abstract class FiringCharacter extends Character {
             case TileType.CHAD:
             case TileType.GUN_GOON:
             case TileType.KUNG_FU_GOON:
+              switch (origin.getType()){
+                case TileType.ALEX:
+                  _animate = true;
+                  _sprite.setActiveAnimation(Animations.iALEX_UP_Fire);
+                  break;
+                case TileType.CHAD:
+                  _animate = true;
+                  _sprite.setActiveAnimation(Animations.iCHAD_UP_Fire);
+                  break;
+                case TileType.GUN_GOON:
+                  _animate = true;
+                  _sprite.setActiveAnimation(Animations.iEMYGUN_UP_Fire);
+                  break;
+                default:
+                  print ("ERROR: Not a valid tile type.");
+              } 
               current.applyHit(1);
               stopIt = true;
               break;
@@ -40,7 +57,8 @@ abstract class FiringCharacter extends Character {
       case Orientation.E:
         _x+=1;
         for (int distance = BoardConsts.GRID_W - _x; distance > 0; distance--){
-          current = _board.get(_x,_y);
+          origin = _board.get(_x,_y);
+          current = origin;
           switch (current.getType()){
             
             case TileType.BLANK:
@@ -53,6 +71,22 @@ abstract class FiringCharacter extends Character {
             case TileType.CHAD:
             case TileType.GUN_GOON:
             case TileType.KUNG_FU_GOON:
+              switch (origin.getType()){
+                case TileType.ALEX:
+                  _animate = true;
+                  _sprite.setActiveAnimation(Animations.iALEX_SIDE_Fire);
+                  break;
+                case TileType.CHAD:
+                  _animate = true;
+                  _sprite.setActiveAnimation(Animations.iCHAD_SIDE_Fire);
+                  break;
+                case TileType.GUN_GOON:
+                  _animate = true;
+                  _sprite.setActiveAnimation(Animations.iEMYGUN_SIDE_Fire);
+                  break;
+                default:
+                  print ("ERROR: Not a valid tile type.");
+              } 
               current.applyHit(1);
               stopIt = true;
               break;
@@ -68,7 +102,8 @@ abstract class FiringCharacter extends Character {
       case Orientation.S:
         _y+=1;
         for (int distance = BoardConsts.GRID_H - _y; distance > 0; distance--){
-          current = _board.get(_x,_y);
+          origin = _board.get(_x,_y);
+          current = origin;
           switch (current.getType()){
             
             case TileType.BLANK:
@@ -81,6 +116,22 @@ abstract class FiringCharacter extends Character {
             case TileType.CHAD:
             case TileType.GUN_GOON:
             case TileType.KUNG_FU_GOON:
+              switch (origin.getType()){
+                case TileType.ALEX:
+                  _animate = true;
+                  _sprite.setActiveAnimation(Animations.iALEX_DWN_Fire);
+                  break;
+                case TileType.CHAD:
+                  _animate = true;
+                  _sprite.setActiveAnimation(Animations.iCHAD_DWN_Fire);
+                  break;
+                case TileType.GUN_GOON:
+                  _animate = true;
+                  _sprite.setActiveAnimation(Animations.iEMYGUN_DWN_Fire);
+                  break;
+                default:
+                  print ("ERROR: Not a valid tile type.");
+              } 
               current.applyHit(1);
               stopIt = true;
               break;
@@ -96,7 +147,8 @@ abstract class FiringCharacter extends Character {
       case Orientation.W:
         _x-=1;
         for (int distance = BoardConsts.GRID_W - _x; distance > 0; distance--){
-          current = _board.get(_x,_y);
+          origin = _board.get(_x,_y);
+          current = origin;
           switch (current.getType()){
             
             case TileType.BLANK:

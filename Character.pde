@@ -40,8 +40,6 @@ abstract class Character extends Tile {
                   _board.set (_x,_y,next);
                   _y-=1;
                   _board.set (_x,_y,this);
-                  _animate = true;
-                  _sprite.setActiveAnimation(Animations.iGEN_DWN_Fwd);
                   break;
                 case TileType.BARREL:
                 case TileType.CRATE:
@@ -51,6 +49,7 @@ abstract class Character extends Tile {
                     _board.set (_x,_y,this);
                     _y-=1;
                     _board.set (_x,_y,next);
+
                   } else{
                     
                   }
@@ -92,6 +91,8 @@ abstract class Character extends Tile {
               switch (next.getType()) {
                 case TileType.BLANK:
                   _board.set (_x,_y,next);
+                  _animate = true;
+                  _sprite.setActiveAnimation(Animations.iGEN_DWN_Fwd);
                   _y+=1;
                   _board.set (_x,_y,this);
                   break;
@@ -99,6 +100,8 @@ abstract class Character extends Tile {
                 case TileType.CRATE:
                   if (last.getType() == TileType.BLANK){
                     _board.set (_x,_y,last);
+                    _animate = true;
+                    _sprite.setActiveAnimation(Animations.iGEN_DWN_Fwd);
                     _y+=1;
                     _board.set (_x,_y,this);
                     _y+=1;
@@ -203,6 +206,8 @@ abstract class Character extends Tile {
               switch (next.getType()) {
                 case TileType.BLANK:
                   _board.set (_x,_y,next);
+                  _animate = true;
+                  _sprite.setActiveAnimation(Animations.iGEN_DWN_Back);
                   _y-=1;
                   _board.set (_x,_y,this);
                   break;
@@ -211,6 +216,8 @@ abstract class Character extends Tile {
                   if (last.getType() == TileType.BLANK){
                     _board.set (_x,_y,last);
                     _y-=1;
+                    _animate = true;
+                    _sprite.setActiveAnimation(Animations.iGEN_DWN_Back);
                     _board.set (_x,_y,this);
                     _y-=1;
                     _board.set (_x,_y,next);
