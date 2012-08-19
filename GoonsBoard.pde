@@ -1,10 +1,12 @@
 static class GoonsConsts {
   static final int KUNG_FU_NUM = 3;
   static final int GUN_NUM = 3;
+  static final int NUM = KUNG_FU_NUM + GUN_NUM;
 }
 
 class GoonsBoard extends Board {
   ArrayList<Character> _goons; // Only Goons
+  int _currentGoon;
   
   GoonsBoard() {
     super();
@@ -22,5 +24,16 @@ class GoonsBoard extends Board {
         // Figure out what thing to place!
       }
     }
+  }
+  
+  void playCard(int player) {
+    super.playCard(player);
+    if(player == Player.GOON) {
+      _playedCard.execute(_currentGoon);
+    }
+  }
+  
+  Character pickGoon() {
+    floor(random(GoonsConsts.NUM));
   }
 }
