@@ -1,8 +1,14 @@
 static class BoardConsts {
   static final int BOARD_X = 100;
   static final int BOARD_Y = 50;
-  static final int BOARD_W = 500;
-  static final int BOARD_H = 500;
+  static final int BOARD_W = 560;
+  static final int BOARD_H = 700;
+  
+  static final int GRID_W = 8;
+  static final int GRID_H = 10;
+  
+  static final int TILE_W = BOARD_W / GRID_W;
+  static final int TILE_H = BOARD_H / GRID_H;
 }
 
 /**
@@ -47,7 +53,19 @@ abstract class Board extends Being {
   }
 
   public void draw() {
-    // Add your draw method here
+    for(int i = 0; i < BoardConsts.GRID_W; i++) { // row by row
+      pushMatrix();
+      
+      for(int j = 0; j < BoardConsts.GRID_H; j++) { // iterate down the columns
+        pushStyle();
+        get(i,j).draw();
+        popStyle();
+        translate(0, BoardConsts.TILE_H);
+      }
+      
+      popMatrix();
+      translate(BoardConsts.TILE_W, 0);
+    }
   }
 }
 
