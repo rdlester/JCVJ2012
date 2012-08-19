@@ -4,6 +4,7 @@ static class BoardConsts {
   static final int BOARD_W = 560;
   static final int BOARD_H = 700;
 
+  // Actual grid will be + 2, outer ring will be Indestructible tiles
   static final int GRID_W = 8;
   static final int GRID_H = 10;
 
@@ -28,7 +29,6 @@ abstract class Board extends Being {
     super(new Rectangle(BoardConsts.BOARD_X, BoardConsts.BOARD_Y, BoardConsts.BOARD_W, BoardConsts.BOARD_H));
     _alex = new Alex(this);
     _chad = new Chad(this);
-    _grid = new Tile[BoardConsts.GRID_W][BoardConsts.GRID_H];
     initBoard();
     _playedCard = null;
   }
@@ -78,19 +78,7 @@ abstract class Board extends Being {
   }
 
   public void draw() {
-    for (int i = 0; i < BoardConsts.GRID_W; i++) { // row by row
-      pushMatrix();
-
-      for (int j = 0; j < BoardConsts.GRID_H; j++) { // iterate down the columns
-        pushStyle();
-        get(i, j).draw();
-        popStyle();
-        translate(0, BoardConsts.TILE_H);
-      }
-
-      popMatrix();
-      translate(BoardConsts.TILE_W, 0);
-    }
+    
   }
 }
 

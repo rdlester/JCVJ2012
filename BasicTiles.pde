@@ -38,3 +38,12 @@ class IndestructibleTile extends Tile {
   }
 }
 
+class VictoryTile extends Tile {
+  VictoryTile() {
+    super(TileType.VICTORY);
+  }
+  
+  void draw() {
+    
+  }
+}

@@ -14,6 +14,7 @@ class GoonsBoard extends Board {
   }
 
   void initBoard() {
+    _grid = new Tile[BoardConsts.GRID_W+2][BoardConsts.GRID_H+2];
     _goons = new Character[GoonsConsts.NUM];
     for (int i = 0; i < GoonsConsts.KUNG_FU_NUM; i++) {
       _goons[i] = new KungFuGoon(this);
@@ -21,9 +22,17 @@ class GoonsBoard extends Board {
     for (int i = GoonsConsts.KUNG_FU_NUM; i < GoonsConsts.NUM; i++) {
       _goons[i] = new GunGoon(this);
     }
-    for (int i = 0; i < BoardConsts.GRID_W; i++) {
-      for (int j = 0; j < BoardConsts.GRID_H; j++) {
-        // Figure out what thing to place!
+    // First - set outer edge to indestructible
+    
+    
+    for (int i = 0; i < BoardConsts.GRID_W+2; i++) {
+      for (int j = 0; j < BoardConsts.GRID_H+2; j++) {
+        if (i == 0 || j == 0 || i == BoardConsts.GRID_W+1 || j == BoardConsts.GRID_H+1) {
+          _grid[i][j] = new IndestructibleTile(); // Fill outer ring with Indestructible tiles
+        }
+        else {
+          _grid[i][j] = new BlankTile();
+        }
       }
     }
   }
@@ -58,7 +67,22 @@ class GoonsBoard extends Board {
   }
   
   void draw() {
+    // Make sure to skip outer ring
+    for (int i = 1; i <= BoardConsts.GRID_W; i++) { // row by row
+      pushMatrix();
+
+      for (int j = 1; j <= BoardConsts.GRID_H; j++) { // iterate down the columns
+        pushStyle();
+        get(i, j).draw();
+        popStyle();
+        translate(0, BoardConsts.TILE_H);
+      }
+
+      popMatrix();
+      translate(BoardConsts.TILE_W, 0);
+    }
     
+    // Draw Animations
   }
 }
 
