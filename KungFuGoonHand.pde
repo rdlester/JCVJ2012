@@ -4,7 +4,7 @@ static class KungFuGoonConsts {
   static final int HAND_SIZE = 5;
 }
 
-class KungFuGoonHand extends Hand {
+class KungFuGoonHand extends GoonHand {
   Card[] _kungfuHand;
 
   PImage _kungfuName;

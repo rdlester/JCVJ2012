@@ -8,18 +8,30 @@ static class HandConsts {
 /**
  * Hand of Cards
  */
-class Hand extends Being {
+abstract class Hand extends Being {
+  boolean _isTurn;
+  boolean _ready;
   
   Hand() {
     super(new Rectangle(HandConsts.HAND_X, HandConsts.HAND_Y, HandConsts.HAND_W, HandConsts.HAND_H));
+    _isTurn = false;
+    _ready = false;
   }
-
-  public void update() {
-    // Add update method here
+  
+  boolean getTurn() {
+    return _isTurn;
   }
-
-  public void draw() {
-    // Add your draw method here
+  
+  void setTurn(boolean turn) {
+    _isTurn = turn;
+  }
+  
+  boolean getReady() {
+    return _ready;
+  }
+  
+  void setReady(boolean ready) {
+    _ready = ready;
   }
 }
 

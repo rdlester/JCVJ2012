@@ -26,7 +26,7 @@ static class GoonConsts {
   static final int CARD7_Y = 276;
 }
 
-class GunGoonHand extends Hand {
+class GunGoonHand extends GoonHand {
   Card[] _gunHand;
   
   PImage _gunName;
