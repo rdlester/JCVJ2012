@@ -1,17 +1,16 @@
-class ExecGoonInteractor extends Interactor<TurnController, GoonHand> {
+class ExecGoonInteractor extends Interactor<TurnController, GoonsBoard> {
   ExecGoonInteractor() {
     super();
   }
   
-  boolean detect(TurnController t, GoonHand h) {
+  boolean detect(TurnController t, GoonsBoard h) {
     return h.getReady() && t.getState() == TurnState.EXEC_GOON;
   }
   
-  void handle(TurnController t, GoonHand h) {
-    h.setReady(false);
-    h.setTurn(false);
-    t.setQueueForExec(h.getQueue());
+  void handle(TurnController t, GoonsBoard h) {
+    h.playCard(t.getNextGoonMove());
   }
 }
+
 
 

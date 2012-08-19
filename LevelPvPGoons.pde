@@ -21,16 +21,16 @@ class LevelPvPGoons extends Level {
     register(kungFuGoonHand, false);
 
     // Interactions between TurnController and objects
-    register(vanDamHand, turnController, new ShowVDInteractor());
-    register(vanDamHand, turnController, new PlanVDInteractor());
-    register(board, turnController, new ExecVDInteractor());
-    register(board, turnController, new AnimVDInteractor());
-    register(gunGoonHand, turnController, new ShowGunGoonInteractor());
-    register(kungFuGoonHand, turnController, new ShowKungFuGoonHandInteractor());
-    register(gunGoonHand, turnController, new PlanGoonInteractor());
-    register(kungFuGoonHand, turnController, new PlanGoonInteractor());
-    register(board, turnController, new ExecGoonInteractor());
-    register(board, turnController, new AnimGoonInteractor());
+    register(turnController, vanDamHand, new ShowVDInteractor());
+    register(turnController, vanDamHand, new PlanVDInteractor());
+    register(turnController, board, new ExecVDInteractor());
+    register(turnController, board, new AnimVDInteractor());
+    register(turnController, gunGoonHand, new ShowGunGoonInteractor());
+    register(turnController, kungFuGoonHand, new ShowKungFuGoonInteractor());
+    register(turnController, gunGoonHand, new PlanGoonInteractor());
+    register(turnController, kungFuGoonHand, new PlanGoonInteractor());
+    register(turnController, board, new ExecGoonInteractor());
+    register(turnController, board, new AnimGoonInteractor());
 
     // Subscriptions
     // Alex's hand
@@ -66,6 +66,7 @@ class LevelPvPGoons extends Level {
     subscribe(kungFuGoonHand, S);
   }
 }
+
 
 
 

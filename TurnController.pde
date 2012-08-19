@@ -11,13 +11,14 @@ static class TurnState {
  * Tracks game state
  * States are: Van Dam's turn, Evil turn, and Execution stage
  */
-class TurnController extends HObject {
+class TurnController extends Being {
   ArrayList<Card> _queue;
   int _nextGoon;
   Card _evilMove;
   int _state;
 
   TurnController() {
+    super(new Rectangle(1,1,1,1));
     _queue = null;
     _nextGoon = -1;
     _evilMove = null;
@@ -74,6 +75,7 @@ class TurnController extends HObject {
     }
   }
 }
+
 
 
 

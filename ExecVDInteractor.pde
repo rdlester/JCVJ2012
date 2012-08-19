@@ -8,8 +8,9 @@ class ExecVDInteractor extends Interactor<TurnController, GoonsBoard> {
   }
   
   void handle(TurnController t, GoonsBoard h) {
-    h.playCard(t.getNextGoonMove());
+    h.playCard(t.getNextVDMove());
   }
 }
+
 
 

@@ -1,5 +1,5 @@
 class PlanGoonInteractor extends Interactor<TurnController, GoonHand> {
-  PlanVDInteractor() {
+  PlanGoonInteractor() {
     super();
   }
   
@@ -13,5 +13,6 @@ class PlanGoonInteractor extends Interactor<TurnController, GoonHand> {
     t.setQueueForExec(h.getQueue());
   }
 }
+
 
 
