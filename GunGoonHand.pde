@@ -45,44 +45,48 @@ class GunGoonHand extends GoonHand {
   }
   
   void draw() {
-    translate(GoonConsts.X, GoonConsts.Y);
+    if(getTurn()) {
+      translate(GoonConsts.X, GoonConsts.Y);
     
-    // Draw Title
-    pushMatrix();
-    translate(GoonConsts.NAME_X, GoonConsts.NAME_Y);
-    image(_gunName, 0, 0);
-    popMatrix();
+      // Draw Title
+      pushMatrix();
+      translate(GoonConsts.NAME_X, GoonConsts.NAME_Y);
+      image(_gunName, 0, 0);
+      popMatrix();
 
-    // Draw cards
-    pushMatrix();
-    translate(GoonConsts.CARD1_X, GoonConsts.CARD1_Y);
-    _gunHand[0].draw();
-    popMatrix();
-    pushMatrix();
-    translate(GoonConsts.CARD2_X, GoonConsts.CARD2_Y);
-    _gunHand[1].draw();
-    popMatrix();
-    pushMatrix();
-    translate(GoonConsts.CARD3_X, GoonConsts.CARD3_Y);
-    _gunHand[2].draw();
-    popMatrix();
-    pushMatrix();
-    translate(GoonConsts.CARD4_X, GoonConsts.CARD4_Y);
-    _gunHand[3].draw();
-    popMatrix();
-    pushMatrix();
-    translate(GoonConsts.CARD5_X, GoonConsts.CARD5_Y);
-    _gunHand[4].draw();
-    popMatrix();
-    pushMatrix();
-    translate(GoonConsts.CARD6_X, GoonConsts.CARD6_Y);
-    _gunHand[5].draw();
-    popMatrix();
-    pushMatrix();
-    translate(GoonConsts.CARD7_X, GoonConsts.CARD7_Y);
-    _gunHand[6].draw();
-    popMatrix();
+      // Draw cards
+      pushMatrix();
+      translate(GoonConsts.CARD1_X, GoonConsts.CARD1_Y);
+      _gunHand[0].draw();
+      popMatrix();
+      pushMatrix();
+      translate(GoonConsts.CARD2_X, GoonConsts.CARD2_Y);
+      _gunHand[1].draw();
+      popMatrix();
+      pushMatrix();
+      translate(GoonConsts.CARD3_X, GoonConsts.CARD3_Y);
+      _gunHand[2].draw();
+      popMatrix();
+      pushMatrix();
+      translate(GoonConsts.CARD4_X, GoonConsts.CARD4_Y);
+      _gunHand[3].draw();
+      popMatrix();
+      pushMatrix();
+      translate(GoonConsts.CARD5_X, GoonConsts.CARD5_Y);
+      _gunHand[4].draw();
+      popMatrix();
+      pushMatrix();
+      translate(GoonConsts.CARD6_X, GoonConsts.CARD6_Y);
+      _gunHand[5].draw();
+      popMatrix();
+      pushMatrix();
+      translate(GoonConsts.CARD7_X, GoonConsts.CARD7_Y);
+      _gunHand[6].draw();
+      popMatrix();
+    }
   }
 }
+
+
 
 

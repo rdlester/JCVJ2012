@@ -1,5 +1,5 @@
-class GoonExecInteractor extends Interactor<TurnController, GoonHand> {
-  GoonExecInteractor() {
+class ExecGoonInteractor extends Interactor<TurnController, GoonHand> {
+  ExecGoonInteractor() {
     super();
   }
   
@@ -13,3 +13,5 @@ class GoonExecInteractor extends Interactor<TurnController, GoonHand> {
     t.setQueueForExec(h.getQueue());
   }
 }
+
+

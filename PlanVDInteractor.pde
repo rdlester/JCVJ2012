@@ -1,15 +1,17 @@
 class PlanVDInteractor extends Interactor<TurnController, VanDamHand> {
-  PlanningInteractor() {
+  PlanVDInteractor() {
     super();
   }
   
   boolean detect(TurnController t, VanDamHand h) {
-    return h.isReady() && t.getState() == TurnState.PLAN_VD;
+    return h.getReady() && t.getState() == TurnState.PLAN_VD;
   }
   
   void handle(TurnController t, VanDamHand h) {
     h.setReady(false);
     h.setTurn(false);
-    t.setQueueForExec(h.getQueue);
+    t.setQueueForExec(h.getQueue());
   }
 }
+
+
