@@ -1,7 +1,7 @@
 /**
  * VanJam2012
  * Double Impact
- * Ryan Lester, Josh Raab, Chris Hernandez, Young Neil, Calvin Hu 
+ * Ryan Lester, Josh Raab, Chris Hernandez, Young Neil, Calvin Hu
  */
 
 import hermes.*;

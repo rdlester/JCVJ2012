@@ -4,6 +4,21 @@ static class VanDamConsts {
   
   static final int ALEX_X = 50;
   static final int ALEX_Y = 50;
+  static final int ALEX_NAME_X = 20;
+  static final int ALEX_NAME_Y = 20;
+  static final int ALEX_CARD1_X = 10;
+  static final int ALEX_CARD1_Y = 10;
+  static final int ALEX_CARD2_X = 10;
+  static final int ALEX_CARD2_Y = 10;
+  static final int ALEX_CARD3_X = 10;
+  static final int ALEX_CARD3_Y = 10;
+  static final int ALEX_CARD4_X = 10;
+  static final int ALEX_CARD4_Y = 10;
+  static final int ALEX_CARD5_X = 10;
+  static final int ALEX_CARD5_Y = 10;
+  static final int ALEX_CARD6_X = 10;
+  static final int ALEX_CARD6_Y = 10;
+  
   static final int CHAD_X = 50;
   static final int CHAD_Y = 50;
 }
@@ -72,12 +87,22 @@ class VanDamHand extends Hand {
 
   void draw() {
     // Translate to Alex's Hand
-    // Draw title
+    pushMatrix();
+    translate(VanDamConsts.ALEX_X, VanDamConsts.ALEX_Y);
+    // Draw Title
+    translate(VanDamConsts.ALEX_NAME_X, VanDamConsts.ALEX_NAME_Y);
+    // TODO: title
+    
     // Draw cards
     
+    popMatrix();
+    
     // Translate to Chad's Hand
+    pushMatrix();
     // Draw Title
     // Draw cards
+    
+    popMatrix();
   }
   
   void handleKeyMessage(KeyMessage m) {
