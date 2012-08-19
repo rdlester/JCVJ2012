@@ -332,7 +332,7 @@ abstract class Character extends Tile {
                   else{
                   }
                   break;
-                case default:
+                default:
                   //"Stuck" animation goes here.
                   break;                
               }
@@ -353,7 +353,7 @@ abstract class Character extends Tile {
                   else{
                   }
                   break;
-                case default:
+                default:
                   //"Stuck" animation goes here.
                   break;                
               }
@@ -374,7 +374,7 @@ abstract class Character extends Tile {
                   else{
                   }
                   break;
-                case default:
+                 default:
                   //"Stuck" animation goes here.
                   break;                
               }
@@ -395,7 +395,7 @@ abstract class Character extends Tile {
                   else{
                   }
                   break;
-                case default:
+                default:
                   //"Stuck" animation goes here.
                   break;                
               }
@@ -455,4 +455,5 @@ abstract class Character extends Tile {
     }
       
 }
+
 

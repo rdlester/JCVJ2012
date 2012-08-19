@@ -21,3 +21,4 @@ class VanDamHand extends Hand {
 }
 
 
+

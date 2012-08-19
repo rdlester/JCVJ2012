@@ -16,3 +16,4 @@ class FiringCharacter extends Character {
   }
 }
 
+
