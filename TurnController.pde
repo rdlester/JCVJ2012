@@ -4,24 +4,25 @@ static class TurnState {
   static final int ANIM_VD = 2; // animate it
   static final int PLAN_GOON = 3; // Evil Player chooses response
   static final int EXEC_GOON = 4;
-  static final int ANIM_EVIL = 5; // Execute Evil card, animate it
+  static final int ANIM_GOON = 5; // Execute Evil card, animate it
 }
 
 /**
  * Tracks game state
  * States are: Van Dam's turn, Evil turn, and Execution stage
  */
-class TurnController extends HObject {
+class TurnController extends Being {
   ArrayList<Card> _queue;
   int _nextGoon;
   Card _evilMove;
   int _state;
 
   TurnController() {
+    super(new Rectangle(1,1,1,1));
     _queue = null;
-    _nextGoon = null;
+    _nextGoon = -1;
     _evilMove = null;
-    _state = TurnState.PLANNING;
+    _state = TurnState.PLAN_VD;
   }
 
   int getState() {
@@ -38,25 +39,29 @@ class TurnController extends HObject {
   }
   
   Card getNextVDMove() {
-    assert _queue != null: println("TurnController _queue is null, no next move");
-    assert _queue.size() > 0: println("TurnController: no more VD moves to play! go back to planning");
+    //assert (_queue != null): println("TurnController _queue is null, no next move");
+    //assert _queue.size() > 0: println("TurnController: no more VD moves to play! go back to planning");
     _state = TurnState.ANIM_VD;
     return _queue.remove(0);
   }
   
   void animVDFinished(int goon) {
-    _state = TurnState.COMBAT_EVIL;
+    _state = TurnState.PLAN_GOON;
     _nextGoon = goon;
   }
   
+  int getGoon() {
+    return _nextGoon;
+  }
+  
   void setQueueForExec(Card queue) {
-    _state = TurnState.EXEC_EVIL;
+    _state = TurnState.EXEC_GOON;
     _evilMove = queue;
   }
   
   Card getNextGoonMove() {
-    assert _queue != null: println("TurnController _evilMove is null, no next move");
-    _state = TurnState.ANIM_EVIL;
+    //assert _queue != null: println("TurnController _evilMove is null, no next move");
+    _state = TurnState.ANIM_GOON;
     Card temp = _evilMove;
     _evilMove = null;
     return temp;
@@ -66,7 +71,7 @@ class TurnController extends HObject {
     if(_queue.size() > 0) {
       _state = TurnState.EXEC_VD;
     } else {
-      _state = TurnState.PLANNING;
+      _state = TurnState.PLAN_VD;
     }
   }
 }
@@ -76,3 +81,8 @@ class TurnController extends HObject {
 
 
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> db58a4b5f9878ae35a35db114657cc09f64c9e20

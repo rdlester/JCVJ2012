@@ -1,10 +1,10 @@
 class ShowKungFuGoonInteractor extends Interactor<TurnController, KungFuGoonHand> {
-  GoonExecInteractor() {
+  ShowKungFuGoonInteractor() {
     super();
   }
   
   boolean detect(TurnController t, KungFuGoonHand h) {
-    return !h.getTurn() && t.getState() == TurnState.PLAN_EVIL && t.getGoon() == TileType.KUNG_FU_GOON;
+    return !h.getTurn() && t.getState() == TurnState.PLAN_GOON && t.getGoon() == TileType.KUNG_FU_GOON;
   }
   
   void handle(TurnController t, KungFuGoonHand h) {
@@ -12,3 +12,6 @@ class ShowKungFuGoonInteractor extends Interactor<TurnController, KungFuGoonHand
     h.setTurn(true);
   }
 }
+
+
+

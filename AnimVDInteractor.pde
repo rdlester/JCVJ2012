@@ -11,3 +11,6 @@ class AnimVDInteractor extends Interactor<TurnController, GoonsBoard> {
     t.animVDFinished(h.pickGoon());
   }
 }
+
+
+
